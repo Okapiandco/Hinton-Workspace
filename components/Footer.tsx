@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Useful Links:</h3>
             <div className="flex flex-col gap-2">
-              <Link href="/privacy" className="hover:text-[var(--hinton-accent)]">
+              <Link href="/privacy-policy" className="hover:text-[var(--hinton-accent)]">
                 Privacy Policy
               </Link>
               <Link href="/blog" className="hover:text-[var(--hinton-accent)]">

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getLocalBusinessSchema, getWebPageSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 const baseUrl = "https://hintonworkspace.co.uk";
@@ -67,8 +68,16 @@ export default function ContactPage() {
       />
 
       {/* Hero */}
-      <section className="bg-[var(--hinton-dark)] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="relative h-[400px] flex items-center justify-center">
+        <Image
+          src="/Reception.jpg"
+          alt="Hinton Workspace reception"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--hinton-dark)]/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
           <p className="text-xl">
             If you are interested in finding out more about our workspace please get in touch.

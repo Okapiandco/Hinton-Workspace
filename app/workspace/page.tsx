@@ -62,8 +62,16 @@ export default function WorkspacePage() {
       />
 
       {/* Hero */}
-      <section className="bg-[var(--hinton-dark)] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="relative h-[400px] flex items-center justify-center">
+        <Image
+          src="/Coworkingsapce.jpg"
+          alt="Hinton Workspace co-working area"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--hinton-dark)]/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">The Workspace</h1>
           <p className="text-xl max-w-2xl mx-auto">
             Find your focus, hold a meeting, or gather your team — all within a space designed for the ultimate productivity.

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { getWebPageSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 const baseUrl = "https://hintonworkspace.co.uk";
@@ -104,8 +105,16 @@ export default function PricingPage() {
       />
 
       {/* Hero */}
-      <section className="bg-[var(--hinton-dark)] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="relative h-[400px] flex items-center justify-center">
+        <Image
+          src="/coffemug.jpg"
+          alt="Hinton Workspace coffee and workspace"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[var(--hinton-dark)]/70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Membership & Pricing</h1>
           <p className="text-xl max-w-2xl mx-auto">
             It&apos;s simple! Through our booking system you can sign up for membership, book a meeting room or a hot desk.
