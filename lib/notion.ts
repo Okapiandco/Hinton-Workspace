@@ -33,6 +33,7 @@ interface NotionPage {
     Published?: { checkbox: boolean };
     Date?: { date: { start: string } | null };
     Excerpt?: { rich_text: Array<{ plain_text: string }> };
+    Description?: { rich_text: Array<{ plain_text: string }> };
     Location?: { rich_text: Array<{ plain_text: string }> };
     "End Date"?: { date: { start: string } | null };
     "Featured Image"?: { files: Array<{ file?: { url: string }; external?: { url: string } }> };
@@ -56,6 +57,16 @@ function getFeaturedImage(properties: NotionPage["properties"]): string | null {
   if (!files || files.length === 0) return null;
   const file = files[0];
   return file.file?.url || file.external?.url || null;
+}
+
+// Helper to generate a slug from title
+function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-") // Replace multiple hyphens with single
+    .trim();
 }
 
 // Get all published pages
@@ -149,13 +160,17 @@ export async function getBlogPosts() {
       ],
     });
 
-    return (response.results as NotionPage[]).map((post) => ({
-      id: post.id,
-      title: getTitle(post.properties),
-      slug: post.properties.Slug?.rich_text?.[0]?.plain_text || "",
-      date: post.properties.Date?.date?.start || "",
-      excerpt: post.properties.Excerpt?.rich_text?.[0]?.plain_text || "",
-    }));
+    return (response.results as NotionPage[]).map((post) => {
+      const title = getTitle(post.properties);
+      const slug = post.properties.Slug?.rich_text?.[0]?.plain_text || generateSlug(title);
+      return {
+        id: post.id,
+        title,
+        slug,
+        date: post.properties.Date?.date?.start || "",
+        excerpt: post.properties.Excerpt?.rich_text?.[0]?.plain_text || "",
+      };
+    });
   } catch (error) {
     console.error("Failed to fetch blog posts from Notion:", error);
     return [];
@@ -169,6 +184,7 @@ export async function getBlogPostBySlug(slug: string) {
   if (!client || !markdown || !process.env.NOTION_BLOG_DB) return null;
 
   try {
+    // First try to find by explicit Slug property
     const response = await client.databases.query({
       database_id: process.env.NOTION_BLOG_DB,
       filter: {
@@ -189,20 +205,48 @@ export async function getBlogPostBySlug(slug: string) {
       },
     });
 
-    if (response.results.length === 0) {
+    let post: NotionPage | null = null;
+
+    if (response.results.length > 0) {
+      post = response.results[0] as NotionPage;
+    } else {
+      // If not found, try to find by matching generated slug from title
+      const allPosts = await client.databases.query({
+        database_id: process.env.NOTION_BLOG_DB,
+        filter: {
+          property: "Published",
+          checkbox: {
+            equals: true,
+          },
+        },
+      });
+
+      post = (allPosts.results as NotionPage[]).find((p) => {
+        const title = getTitle(p.properties);
+        const generatedSlug = generateSlug(title);
+        return generatedSlug === slug;
+      }) || null;
+    }
+
+    if (!post) {
       return null;
     }
 
-    const post = response.results[0] as NotionPage;
     const mdBlocks = await markdown.pageToMarkdown(post.id);
     const content = markdown.toMarkdownString(mdBlocks);
 
+    const title = getTitle(post.properties);
+    // Get description - join all rich_text blocks if multiple
+    const descriptionBlocks = post.properties.Description?.rich_text || [];
+    const description = descriptionBlocks.map(block => block.plain_text).join("");
+
     return {
       id: post.id,
-      title: getTitle(post.properties),
-      slug: post.properties.Slug?.rich_text?.[0]?.plain_text || "",
+      title,
+      slug: post.properties.Slug?.rich_text?.[0]?.plain_text || generateSlug(title),
       date: post.properties.Date?.date?.start || "",
       excerpt: post.properties.Excerpt?.rich_text?.[0]?.plain_text || "",
+      description,
       content: content.parent,
     };
   } catch (error) {

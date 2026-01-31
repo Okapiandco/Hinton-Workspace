@@ -102,7 +102,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             ← Back to Blog
           </Link>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
-          <p className="text-lg">
+          {post.description && (
+            <p className="text-xl text-white/90 mb-4">{post.description}</p>
+          )}
+          <p className="text-lg text-white/70">
             {new Date(post.date).toLocaleDateString("en-GB", {
               weekday: "long",
               day: "numeric",
