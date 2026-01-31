@@ -2,12 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [workspaceOpen, setWorkspaceOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -157,37 +164,37 @@ export default function Header() {
               <a href="tel:01258472623">
                 Tel: 01258 472 623
               </a>
-              <Link href="/about" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/about" className="hover:text-[var(--hinton-accent)]">
                 About us
               </Link>
-              <Link href="/location" className="hover:text-[var(--hinton-accent)] pl-4" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/location" className="hover:text-[var(--hinton-accent)] pl-4">
                 - Location
               </Link>
-              <Link href="/gallery" className="hover:text-[var(--hinton-accent)] pl-4" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/gallery" className="hover:text-[var(--hinton-accent)] pl-4">
                 - Gallery
               </Link>
-              <Link href="/workspace" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/workspace" className="hover:text-[var(--hinton-accent)]">
                 The Workspace
               </Link>
-              <Link href="/workspace/co-working" className="hover:text-[var(--hinton-accent)] pl-4" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/workspace/co-working" className="hover:text-[var(--hinton-accent)] pl-4">
                 - Co-working
               </Link>
-              <Link href="/workspace/meeting-rooms" className="hover:text-[var(--hinton-accent)] pl-4" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/workspace/meeting-rooms" className="hover:text-[var(--hinton-accent)] pl-4">
                 - Meeting Rooms
               </Link>
-              <Link href="/workspace/event-space" className="hover:text-[var(--hinton-accent)] pl-4" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/workspace/event-space" className="hover:text-[var(--hinton-accent)] pl-4">
                 - Event Space
               </Link>
-              <Link href="/events" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/events" className="hover:text-[var(--hinton-accent)]">
                 What&apos;s on
               </Link>
-              <Link href="/blog" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/blog" className="hover:text-[var(--hinton-accent)]">
                 Blog
               </Link>
-              <Link href="/pricing" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/pricing" className="hover:text-[var(--hinton-accent)]">
                 Pricing
               </Link>
-              <Link href="/contact" className="hover:text-[var(--hinton-accent)]" onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/contact" className="hover:text-[var(--hinton-accent)]">
                 Contact
               </Link>
               <a
