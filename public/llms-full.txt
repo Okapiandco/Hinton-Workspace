@@ -1,0 +1,181 @@
+# Hinton Workspace - Complete Information
+
+> A unique co-working environment for entrepreneurs and professionals seeking focus, flexibility, and community in North Dorset, UK.
+
+## Overview
+
+Hinton Workspace is a beautifully transformed former carpenter's workshop located within the historic Hinton St Mary Estate in North Dorset. We provide a professional, energising environment designed for productivity and inspiration.
+
+Our mission: "Reimagining the rural workspace."
+
+## Location & Address
+
+**Physical Address:**
+The Building Yard
+Hinton St Mary
+Sturminster Newton
+Dorset
+DT10 1NA
+United Kingdom
+
+**Geographic Coordinates:**
+- Latitude: 50.9397
+- Longitude: -2.3089
+
+## Contact Information
+
+- **Phone:** 01258 472 623 (International: +44-1258-472623)
+- **Email:** reception@hintonworkspace.co.uk
+- **Website:** https://hintonworkspace.co.uk
+- **Booking Portal:** https://hintonworkspace.spacebring.com/
+
+## Operating Hours
+
+- Monday: 08:00 - 18:00
+- Tuesday: 08:00 - 18:00
+- Wednesday: 08:00 - 18:00
+- Thursday: 08:00 - 18:00
+- Friday: 08:00 - 18:00
+- Saturday: Closed
+- Sunday: Closed
+
+Reception is manned from 08:30 to 17:00, Monday to Friday.
+
+## Services Offered
+
+### 1. Co-Working Space
+
+Flexible workspace options for remote workers, freelancers, and small business owners.
+
+**Features:**
+- Hot-desking options
+- Dedicated desk memberships
+- Natural light throughout
+- High-speed WiFi
+- Soundproof pods for calls
+- Breakout areas for informal meetings
+- Fully equipped kitchen
+
+**Ideal for:**
+- Remote workers seeking separation from home
+- Freelancers needing professional environment
+- Small business owners wanting flexible office space
+- Entrepreneurs building their business
+
+### 2. Meeting Rooms
+
+Professional meeting spaces available for hire.
+
+**Capacity:** 2 to 30 people
+
+**Features:**
+- Video conferencing facilities
+- Presentation equipment
+- Natural lighting
+- Professional environment
+- Catering options available
+
+**Use cases:**
+- Client meetings
+- Team sessions
+- Board meetings
+- Interviews
+- Workshops
+
+### 3. Event Space
+
+Versatile venue for business and community events.
+
+**Capacity:** Up to 100 guests
+
+**Suitable for:**
+- Corporate off-sites
+- Workshops and training
+- Networking events
+- Community gatherings
+- Private functions
+
+## Facilities & Amenities
+
+1. **Fully Equipped Kitchen**
+   - Tea and coffee provided
+   - Refrigerator
+   - Microwave
+   - Dishwasher
+
+2. **Technology**
+   - High-speed WiFi throughout
+   - Video conferencing capabilities
+   - Printing facilities
+
+3. **Transport & Parking**
+   - Free on-site parking
+   - Electric vehicle charging points
+
+4. **Comfort & Accessibility**
+   - Soundproof quiet pods
+   - Breakout areas
+   - Natural lighting
+   - Dog-friendly environment
+
+5. **Support Services**
+   - Manned reception (08:30-17:00)
+   - Mail handling
+   - Professional business address
+
+## Why Choose Hinton Workspace?
+
+1. **Find Your Focus** - Professional environment built for productivity
+2. **Join the Community** - Connect with like-minded professionals
+3. **Work-Life Balance** - Clear separation between work and home
+4. **Rural Setting** - Beautiful Dorset countryside location
+5. **Flexibility** - Various membership and booking options
+
+## Target Audience
+
+- Entrepreneurs
+- Remote workers
+- Freelancers
+- Small business owners
+- Creative professionals
+- Consultants
+- Anyone seeking professional workspace outside of home
+
+## Website Structure
+
+| Page | URL | Description |
+|------|-----|-------------|
+| Homepage | https://hintonworkspace.co.uk | Main landing page |
+| About | https://hintonworkspace.co.uk/about | About the workspace |
+| Workspace | https://hintonworkspace.co.uk/workspace | Overview of facilities |
+| Co-Working | https://hintonworkspace.co.uk/workspace/co-working | Co-working details |
+| Meeting Rooms | https://hintonworkspace.co.uk/workspace/meeting-rooms | Meeting room hire |
+| Event Space | https://hintonworkspace.co.uk/workspace/event-space | Event venue information |
+| Pricing | https://hintonworkspace.co.uk/pricing | Membership and pricing |
+| Events | https://hintonworkspace.co.uk/events | Upcoming events |
+| Blog | https://hintonworkspace.co.uk/blog | News and articles |
+| Contact | https://hintonworkspace.co.uk/contact | Contact form and details |
+| Location | https://hintonworkspace.co.uk/location | Directions and map |
+| Gallery | https://hintonworkspace.co.uk/gallery | Photo gallery |
+
+## Technical Information
+
+- **Sitemap:** https://hintonworkspace.co.uk/sitemap.xml
+- **Robots.txt:** https://hintonworkspace.co.uk/robots.txt
+- **LLMs.txt:** https://hintonworkspace.co.uk/llms.txt
+
+## Payment Information
+
+- **Price Range:** ££ (mid-range)
+- **Currency:** GBP (British Pounds)
+- **Payment Methods:** Cash, Credit Card, Bank Transfer
+
+## Brand Information
+
+- **Business Name:** Hinton Workspace
+- **Tagline:** "Reimagining the rural workspace"
+- **Parent Entity:** Hinton St Mary Estate
+
+---
+
+Last updated: 2025

@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --hinton-dark: #153734;
+  --hinton: #1a4340;
+  --hinton-light: #1f4f4c;
+  --hinton-accent: #D9AD97;
+  --hinton-cream: #f5f0eb;
+  --hinton-cream-dark: #e8e0d8;
+  --hinton-sage: #A7BC9D;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-hinton-dark: var(--hinton-dark);
+  --color-hinton: var(--hinton);
+  --color-hinton-light: var(--hinton-light);
+  --color-hinton-accent: var(--hinton-accent);
+  --color-hinton-cream: var(--hinton-cream);
+  --color-hinton-sage: var(--hinton-sage);
+  --font-sans: var(--font-josefin);
+  --font-serif: var(--font-baskerville);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-josefin), 'Josefin Sans', sans-serif;
+  font-weight: 300;
+}
+
+/* Serif heading styles */
+.heading-serif {
+  font-family: var(--font-baskerville), 'Libre Baskerville', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.heading-caps {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-family: var(--font-baskerville), 'Libre Baskerville', Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-baskerville), 'Libre Baskerville', Georgia, serif;
+}
+
+/* Small caps style for feature headings */
+.small-caps {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+.prose {
+  max-width: 65ch;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.prose ul, .prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  color: var(--hinton-accent);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: var(--hinton-light);
+}

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(timeout:*)",
+      "Bash(ping:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(powershell -Command \"Stop-Process -Id 28164 -Force\")",
+      "Bash(powershell -Command:*)",
+      "Bash(npm ls:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:hintonworkspace.co.uk)",
+      "Bash(node:*)",
+      "Bash(del:*)",
+      "Bash(gh auth:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
