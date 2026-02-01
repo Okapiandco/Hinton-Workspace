@@ -156,14 +156,72 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* Local Area */}
+      {/* Location & Estate */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-[var(--hinton-dark)] mb-6 text-center">
+            Location &amp; Estate
+          </h2>
+          <p className="text-xl text-gray-600 text-center max-w-4xl mx-auto mb-12">
+            Nestled in the heart of the historic Hinton St Mary Estate in North Dorset,
+            Hinton Workspace offers more than just a desk — it&apos;s part of a vibrant,
+            countryside setting with access to some truly unique amenities. The estate is
+            home to the world-renowned Olympic Equestrian Centre, and is surrounded by
+            beautiful grounds, history, and a growing network of people who work, create,
+            and connect here.
+          </p>
+          <p className="text-lg text-[var(--hinton-dark)] font-semibold text-center mb-8">
+            Members and guests also benefit from exclusive access to a range of first-class facilities:
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
+                Holiday Cottages
+              </h3>
+              <p className="text-gray-600">
+                Three beautifully designed cottages are available to book at discounted rates —
+                ideal for out-of-town guests, work retreats or simply a quiet change of scene.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
+                The Tithe Barn
+              </h3>
+              <p className="text-gray-600">
+                Just 100 metres from the workspace, this historic barn is available for events,
+                workshops or larger team gatherings — with preferential rates for members.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
+                The White Horse Pub
+              </h3>
+              <p className="text-gray-600">
+                Our newly refurbished village pub serves seasonal gastro food, a curated wine list,
+                and local beers — perfect for a post-work unwind or casual meeting.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
+                Rushmore Golf Club
+              </h3>
+              <p className="text-gray-600">
+                Part of the wider estate, the club is just a short drive away and makes an excellent
+                setting to host clients, enjoy team downtime, or stretch your legs between meetings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Local Area */}
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-[var(--hinton-dark)] mb-8 text-center">
             The Local Area
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
                 Rural Setting
               </h3>
@@ -172,7 +230,7 @@ export default function LocationPage() {
                 environment away from the distractions of town centres.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
                 Local Amenities
               </h3>
@@ -181,7 +239,7 @@ export default function LocationPage() {
                 The historic market town has everything you need.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-[var(--hinton-dark)] mb-3">
                 Great Connections
               </h3>
