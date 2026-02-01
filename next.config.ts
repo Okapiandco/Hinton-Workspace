@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "hintonworkspace.co.uk",
+      },
+      {
+        protocol: "https",
+        hostname: "www.hintonworkspace.co.uk",
+      },
     ],
   },
 };

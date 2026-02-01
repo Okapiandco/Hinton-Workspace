@@ -91,6 +91,16 @@ export default async function BlogPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
                 <article key={post.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                  {post.featuredImage && (
+                    <div className="relative h-48">
+                      <Image
+                        src={post.featuredImage}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                   <div className="p-6">
                     <p className="text-[var(--hinton-accent)] text-sm mb-2">
                       {new Date(post.date).toLocaleDateString("en-GB", {

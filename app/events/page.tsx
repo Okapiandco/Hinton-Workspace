@@ -156,6 +156,16 @@ export default async function EventsPage() {
               {/* Notion Events */}
               {events.map((event) => (
                 <article key={event.id} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                  {event.featuredImage && (
+                    <div className="relative h-48">
+                      <Image
+                        src={event.featuredImage}
+                        alt={event.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                   <div className="bg-[var(--hinton-dark)] text-white p-4">
                     <p className="text-lg font-semibold">
                       {new Date(event.date).toLocaleDateString("en-GB", {

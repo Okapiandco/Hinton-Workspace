@@ -59,7 +59,7 @@ export default function LocationPage() {
       {/* Hero */}
       <section className="relative h-[400px] flex items-center justify-center">
         <Image
-          src="/The barn from outside.jpg"
+          src="/hInton workspace exterior 1.jpg"
           alt="Hinton Workspace exterior"
           fill
           className="object-cover"

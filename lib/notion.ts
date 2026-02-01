@@ -169,6 +169,7 @@ export async function getBlogPosts() {
         slug,
         date: post.properties.Date?.date?.start || "",
         excerpt: post.properties.Excerpt?.rich_text?.[0]?.plain_text || "",
+        featuredImage: getFeaturedImage(post.properties),
       };
     });
   } catch (error) {
