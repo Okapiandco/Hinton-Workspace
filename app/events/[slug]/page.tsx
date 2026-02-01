@@ -66,11 +66,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const event = await getEventBySlug(slug);
+  const [event, allEvents] = await Promise.all([
+    getEventBySlug(slug),
+    getEvents(),
+  ]);
 
   if (!event) {
     notFound();
   }
+
+  // Get related events (other upcoming events, excluding current)
+  const relatedEvents = allEvents
+    .filter((e) => e.slug !== slug)
+    .slice(0, 3);
 
   const eventSchema = getEventSchema({
     name: event.title,
@@ -142,6 +150,62 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
           </div>
         </div>
       </section>
+
+      {/* Related Events */}
+      {relatedEvents.length > 0 && (
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-[var(--hinton-dark)] mb-8">
+              More Upcoming Events
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedEvents.map((relatedEvent) => (
+                <article
+                  key={relatedEvent.id}
+                  className="bg-white shadow-lg rounded-lg overflow-hidden"
+                >
+                  <div className="p-6">
+                    <p className="text-[var(--hinton-accent)] text-sm mb-2">
+                      {new Date(relatedEvent.date).toLocaleDateString("en-GB", {
+                        weekday: "long",
+                        day: "numeric",
+                        month: "long",
+                      })}
+                    </p>
+                    <h3 className="text-xl font-bold text-[var(--hinton-dark)] mb-3">
+                      <Link
+                        href={`/events/${relatedEvent.slug}`}
+                        className="hover:text-[var(--hinton-accent)]"
+                      >
+                        {relatedEvent.title}
+                      </Link>
+                    </h3>
+                    {relatedEvent.location && (
+                      <p className="text-gray-600 text-sm mb-4">
+                        {relatedEvent.location}
+                      </p>
+                    )}
+                    <Link
+                      href={`/events/${relatedEvent.slug}`}
+                      className="text-[var(--hinton-accent)] hover:underline font-semibold"
+                    >
+                      View Details
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <Link
+                href="/events"
+                className="inline-block text-[var(--hinton-accent)] hover:underline font-semibold"
+              >
+                View All Events
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }
