@@ -26,20 +26,11 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  overflow-x: hidden;
-  overscroll-behavior: none;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-josefin), 'Josefin Sans', sans-serif;
   font-weight: 300;
-  overflow-x: hidden;
-  overscroll-behavior: none;
-  position: relative;
-  width: 100%;
 }
 
 /* Serif heading styles */
