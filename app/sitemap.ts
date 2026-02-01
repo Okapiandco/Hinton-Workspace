@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { getBlogPosts, getEvents } from '@/lib/notion';
+import { getBlogPosts, getEvents, getPages } from '@/lib/notion';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://hintonworkspace.co.uk';
@@ -102,5 +102,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Error fetching events for sitemap:', error);
   }
 
-  return [...staticPages, ...blogPages, ...eventPages];
+  // Dynamic pages from Notion
+  let dynamicPages: MetadataRoute.Sitemap = [];
+  try {
+    const pages = await getPages();
+    dynamicPages = pages
+      .filter((page) => page.properties.Slug?.rich_text?.[0]?.plain_text)
+      .map((page) => ({
+        url: `${baseUrl}/pages/${page.properties.Slug?.rich_text?.[0]?.plain_text}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      }));
+  } catch (error) {
+    console.error('Error fetching pages for sitemap:', error);
+  }
+
+  return [...staticPages, ...blogPages, ...eventPages, ...dynamicPages];
 }
