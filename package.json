@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "migrate:posts": "tsx scripts/migrate-blog-posts.ts",
+    "create:pages": "tsx scripts/create-pages.ts",
+    "create:workspace-pages": "tsx scripts/create-workspace-pages.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.17.0",
@@ -26,9 +29,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "csv-parser": "^3.2.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
