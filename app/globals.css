@@ -34,6 +34,46 @@
   }
 }
 
+/* Scroll Reveal Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.scroll-reveal.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance animation */
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-animate {
+  animation: hero-fade-in 0.9s ease-out both;
+}
+
+.hero-animate-delay-1 {
+  animation: hero-fade-in 0.9s ease-out 0.2s both;
+}
+
+.hero-animate-delay-2 {
+  animation: hero-fade-in 0.9s ease-out 0.4s both;
+}
+
+.hero-animate-delay-3 {
+  animation: hero-fade-in 0.9s ease-out 0.6s both;
+}
+
 /* Keap Form Styles */
 .keap-custom-form {
   background: white;

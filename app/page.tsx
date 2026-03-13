@@ -5,6 +5,7 @@ import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 import Accordion from '@/components/ui/Accordion'
 import LightboxGallery from '@/components/ui/Lightbox'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 import SchemaScript from '@/components/SchemaScript'
 import { organizationSchema, localBusinessSchema } from '@/lib/schema'
 import Image from 'next/image'
@@ -48,10 +49,12 @@ export default function HomePage() {
 
       {/* Our Workspaces */}
       <Section>
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Our Workspaces</h2>
-          <p className="text-lg font-sans text-gray-600">Flexible space in North Dorset that fits with your work life.</p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Our Workspaces</h2>
+            <p className="text-lg font-sans text-gray-600">Flexible space in North Dorset that fits with your work life.</p>
+          </div>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
             {
@@ -66,8 +69,8 @@ export default function HomePage() {
               image: '/Website Images 2026/Meeting Rooms/Meeting room.jpg',
               href: '/workspace/meeting-rooms',
             },
-          ].map((workspace) => (
-            <div key={workspace.title}>
+          ].map((workspace, idx) => (
+            <ScrollReveal key={workspace.title} delay={idx * 150}>
               <div className="relative h-72 rounded-lg overflow-hidden mb-4">
                 <Image src={workspace.image} alt={workspace.title} fill className="object-cover" />
               </div>
@@ -76,22 +79,24 @@ export default function HomePage() {
               <Link href={workspace.href} className="font-sans font-semibold text-dark-green hover:text-pink transition-colors">
                 Learn More &rarr;
               </Link>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
         <div className="max-w-5xl mx-auto mt-8">
-          <div className="md:w-1/2">
-            <div className="relative h-72 rounded-lg overflow-hidden mb-4">
-              <Image src="/Website Images 2026/Events/Workshop.jpg" alt="Events & Workshops" fill className="object-cover" />
+          <ScrollReveal>
+            <div className="md:w-1/2">
+              <div className="relative h-72 rounded-lg overflow-hidden mb-4">
+                <Image src="/Website Images 2026/Events/Workshop.jpg" alt="Events & Workshops" fill className="object-cover" />
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-dark-green mb-2">Events & Workshops</h3>
+              <p className="font-sans text-gray-600 mb-3 leading-relaxed">
+                Hinton Workspace hosts talks, workshops, and gatherings throughout the year. You can also hire our spaces for your own events, from business workshops to wellbeing sessions, for up to 100 guests.
+              </p>
+              <Link href="/events" className="font-sans font-semibold text-dark-green hover:text-pink transition-colors">
+                Learn More &rarr;
+              </Link>
             </div>
-            <h3 className="text-2xl font-serif font-bold text-dark-green mb-2">Events & Workshops</h3>
-            <p className="font-sans text-gray-600 mb-3 leading-relaxed">
-              Hinton Workspace hosts talks, workshops, and gatherings throughout the year. You can also hire our spaces for your own events, from business workshops to wellbeing sessions, for up to 100 guests.
-            </p>
-            <Link href="/events" className="font-sans font-semibold text-dark-green hover:text-pink transition-colors">
-              Learn More &rarr;
-            </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </Section>
 
@@ -108,7 +113,7 @@ export default function HomePage() {
       {/* Working Better. Together. */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
-          <div>
+          <ScrollReveal>
             <h2 className="text-4xl font-serif font-bold text-dark-green mb-6">
               Working Better.<br /><em>Together.</em>
             </h2>
@@ -131,8 +136,8 @@ export default function HomePage() {
             <p className="font-sans text-gray-700 leading-relaxed">
               Located within the historic Hinton St Mary estate, our buildings are carefully adapted to create calm, practical workspaces while respecting the estate&apos;s character. Modern work sits comfortably alongside history here.
             </p>
-          </div>
-          <div className="relative">
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
             <div className="relative h-[500px] rounded-lg overflow-hidden">
               <Image src="/Website Images 2026/About/Signage.jpg" alt="Hinton Workspace building" fill className="object-cover" />
             </div>
@@ -140,16 +145,19 @@ export default function HomePage() {
               <p className="font-serif font-bold text-xl mb-1">Since 2024</p>
               <p className="font-sans text-sm">Transforming how rural professionals work, without the distractions of home or the city.</p>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </Section>
 
       {/* Life at Hinton */}
       <Section bgColor="white">
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Life at Hinton</h2>
-          <p className="text-lg font-sans text-gray-600">A glimpse into our daily life — from focused work sessions to community gatherings.</p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Life at Hinton</h2>
+            <p className="text-lg font-sans text-gray-600">A glimpse into our daily life — from focused work sessions to community gatherings.</p>
+          </div>
+        </ScrollReveal>
+        <ScrollReveal delay={100}>
         <LightboxGallery
           columns={2}
           images={[
@@ -159,12 +167,13 @@ export default function HomePage() {
             { src: '/Website Images 2026/Coworking/Outside area.jpg', alt: 'Outdoor seating area' },
           ]}
         />
+        </ScrollReveal>
       </Section>
 
       {/* What's Included */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-          <div>
+          <ScrollReveal>
             <h2 className="text-4xl font-serif font-bold text-dark-green mb-6">
               What&apos;s <em>Included</em>
             </h2>
@@ -193,22 +202,27 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <Image src="/Website Images 2026/Coworking/Outside area.jpg" alt="Outdoor area" fill className="object-cover" />
-          </div>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image src="/Website Images 2026/Coworking/Outside area.jpg" alt="Outdoor area" fill className="object-cover" />
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 
       {/* Wellbeing */}
       <Section bgColor="white">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Work Well. Move Well. Reset Well.</h2>
-          <p className="text-lg font-sans text-gray-600 max-w-2xl mx-auto">
-            At Hinton Workspace, wellbeing fits around your workday, making it easier to look after yourself without adding more to your to-do list.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Work Well. Move Well. Reset Well.</h2>
+            <p className="text-lg font-sans text-gray-600 max-w-2xl mx-auto">
+              At Hinton Workspace, wellbeing fits around your workday, making it easier to look after yourself without adding more to your to-do list.
+            </p>
+          </div>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <ScrollReveal>
           <div className="bg-cream border border-light-pink rounded-lg p-8">
             <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Personal Training Gym</h3>
             <p className="font-sans text-pink text-sm mb-4">with Cam from C Results</p>
@@ -219,6 +233,8 @@ export default function HomePage() {
               <Button variant="primary" size="sm">Book with Cam</Button>
             </a>
           </div>
+          </ScrollReveal>
+          <ScrollReveal delay={150}>
           <div className="bg-cream border border-light-pink rounded-lg p-8">
             <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Spa Treatments</h3>
             <p className="font-sans text-pink text-sm mb-4">with Gemma</p>
@@ -229,15 +245,18 @@ export default function HomePage() {
               <Button variant="primary" size="sm">Book with Gemma</Button>
             </a>
           </div>
+          </ScrollReveal>
         </div>
       </Section>
 
       {/* Pricing */}
       <Section bgColor="dark-green">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold text-white mb-4">Membership & Pricing</h2>
-          <p className="text-lg font-sans text-gray-200">Flexible options designed to suit your work style. No long-term commitments required.</p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-bold text-white mb-4">Membership & Pricing</h2>
+            <p className="text-lg font-sans text-gray-200">Flexible options designed to suit your work style. No long-term commitments required.</p>
+          </div>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {[
             {
@@ -253,7 +272,8 @@ export default function HomePage() {
               features: ['Unlimited access', 'Meeting room bookings included', '24/7 access available', 'Business address use', 'All amenities included', 'Free parking'],
             },
           ].map((plan, idx) => (
-            <div key={idx} className="bg-white/10 backdrop-blur rounded-lg p-8 relative">
+            <ScrollReveal key={idx} delay={idx * 150}>
+            <div className="bg-white/10 backdrop-blur rounded-lg p-8 relative">
               {plan.featured && (
                 <div className="absolute -top-3 right-4 bg-pink text-white px-3 py-1 rounded-full text-xs font-bold">MOST POPULAR</div>
               )}
@@ -279,6 +299,7 @@ export default function HomePage() {
                 </button>
               </a>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </Section>
@@ -286,15 +307,17 @@ export default function HomePage() {
       {/* Reviews */}
       <Section>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="flex justify-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className="text-yellow-400 text-2xl">&#9733;</span>
-              ))}
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <div className="flex justify-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-2xl">&#9733;</span>
+                ))}
+              </div>
+              <h2 className="text-4xl font-serif font-bold text-dark-green mb-2">What People Say</h2>
+              <p className="text-lg font-sans text-gray-600">Rated 5 stars on Google</p>
             </div>
-            <h2 className="text-4xl font-serif font-bold text-dark-green mb-2">What People Say</h2>
-            <p className="text-lg font-sans text-gray-600">Rated 5 stars on Google</p>
-          </div>
+          </ScrollReveal>
           <GoogleReviews />
           <div className="text-center mt-8">
             <a
@@ -314,12 +337,14 @@ export default function HomePage() {
 
       {/* Plan Your Visit / Contact */}
       <Section bgColor="dark-green">
+        <ScrollReveal>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-serif font-bold text-white mb-4">Plan Your Visit</h2>
           <p className="text-lg font-sans text-gray-200 max-w-2xl mx-auto">
             Hinton Workspace is set within a peaceful rural estate in North Dorset, with free parking and easy access. Drop us a message to plan your visit.
           </p>
         </div>
+        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <div>
             <div className="relative h-64 rounded-lg overflow-hidden mb-8">
@@ -400,10 +425,12 @@ export default function HomePage() {
 
       {/* FAQs */}
       <Section>
-        <div className="text-center mb-10">
-          <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Frequently Asked Questions</h2>
-          <p className="text-lg font-sans text-gray-600">A calm, professional workspace near Blandford, Shaftesbury, and Salisbury.</p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-10">
+            <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg font-sans text-gray-600">A calm, professional workspace near Blandford, Shaftesbury, and Salisbury.</p>
+          </div>
+        </ScrollReveal>
         <div className="max-w-3xl mx-auto">
           <Accordion items={faqs} />
         </div>

@@ -46,19 +46,19 @@ export default function HeroSection({
       )}
       <div className="absolute inset-0 bg-dark-green/50" />
       <div className="relative z-10 text-left max-w-7xl w-full mx-auto px-4 pb-16">
-        <p className="text-sm font-sans text-pink mb-4 tracking-[0.2em] uppercase">
+        <p className="hero-animate text-sm font-sans text-pink mb-4 tracking-[0.2em] uppercase">
           {subtitle}
         </p>
-        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight max-w-2xl">
+        <h1 className="hero-animate-delay-1 text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight max-w-2xl">
           {title}
         </h1>
         {body && (
-          <p className="text-base font-sans text-white/90 mb-8 max-w-lg leading-relaxed">
+          <p className="hero-animate-delay-2 text-base font-sans text-white/90 mb-8 max-w-lg leading-relaxed">
             {body}
           </p>
         )}
         {ctas && (
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
             {ctas.map((cta, idx) => (
               <a
                 key={idx}

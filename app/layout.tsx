@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Libre_Baskerville, DM_Sans } from 'next/font/google'
 import SiteLayout from '@/components/layout/RootLayout'
+import CookieConsent from '@/components/ui/CookieConsent'
 import './globals.css'
 
 const baskerville = Libre_Baskerville({
@@ -76,24 +77,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${baskerville.variable} ${dmSans.variable}`}>
-      <head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-            `,
-          }}
-        />
-      </head>
       <body className="font-sans bg-cream text-gray-900">
         <SiteLayout>{children}</SiteLayout>
+        <CookieConsent />
 
         {/* Keap Form Script */}
         <script

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Section from '@/components/ui/Section'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 interface TextImageSectionProps {
   title: string
@@ -24,7 +25,7 @@ export default function TextImageSection({
     <Section bgColor={bgColor}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text */}
-        <div className={isImageLeft ? 'md:order-2' : 'md:order-1'}>
+        <ScrollReveal className={isImageLeft ? 'md:order-2' : 'md:order-1'}>
           <h2 className="text-4xl font-serif font-bold text-dark-green mb-6">
             {title}
           </h2>
@@ -33,11 +34,11 @@ export default function TextImageSection({
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Image */}
         {image && (
-          <div className={isImageLeft ? 'md:order-1' : 'md:order-2'}>
+          <ScrollReveal className={isImageLeft ? 'md:order-1' : 'md:order-2'} delay={200}>
             <Image
               src={image}
               alt={imageAlt}
@@ -45,7 +46,7 @@ export default function TextImageSection({
               height={450}
               className="rounded-lg shadow-lg w-full h-auto"
             />
-          </div>
+          </ScrollReveal>
         )}
       </div>
     </Section>
