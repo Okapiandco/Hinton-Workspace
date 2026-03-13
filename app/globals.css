@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-dark-green: #153734;
+  --color-pink: #D9AD97;
+  --color-cream: #FAF5F2;
+  --color-light-pink: #E8D4C8;
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Baskerville SC';
+  src: url('/fonts/Baskerville-SC.woff2') format('woff2');
+  font-weight: 400;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF5F2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: #153734;
+}
+
+body, p, span {
+  font-family: var(--font-sans);
+}
+
+/* Keap Form Styles */
+.keap-custom-form {
+  background: white;
+  border: 1px solid #E8D4C8;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.keap-custom-form input,
+.keap-custom-form textarea {
+  border: 1px solid #E8D4C8 !important;
+  border-radius: 4px !important;
+  font-family: var(--font-sans) !important;
+  padding: 12px !important;
+}
+
+.keap-custom-form label {
+  color: #153734 !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+}
+
+.keap-custom-form button,
+.keap-custom-form input[type="submit"] {
+  background: #153734 !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 24px !important;
+  border-radius: 4px !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+.keap-custom-form button:hover,
+.keap-custom-form input[type="submit"]:hover {
+  background: #0F2321 !important;
+}
+
+.keap-custom-form input:focus,
+.keap-custom-form textarea:focus {
+  border-color: #D9AD97 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(217, 173, 151, 0.1) !important;
 }
