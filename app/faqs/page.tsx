@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Accordion from '@/components/ui/Accordion'
+import SchemaScript from '@/components/SchemaScript'
+import { faqSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'FAQs | Hinton Workspace',
@@ -89,6 +91,8 @@ const faqs = [
 export default function FAQsPage() {
   return (
     <>
+      <SchemaScript schema={faqSchema(faqs)} />
+
       {/* Hero */}
       <Section className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto text-center">

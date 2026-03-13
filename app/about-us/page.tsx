@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import TextImageSection from '@/components/sections/TextImageSection'
 import Section from '@/components/ui/Section'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About Hinton Workspace | Rural Coworking Dorset',
@@ -23,15 +23,43 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Story */}
-      <TextImageSection
-        title="Our Story"
-        body={`Hinton Workspace was created to offer a calmer, flexible way of working and connecting — one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
+      {/* Story + Video */}
+      <Section bgColor="white">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div>
+            <h2 className="text-3xl font-serif font-bold text-dark-green mb-6">Our Story</h2>
+            <p className="font-sans text-gray-700 mb-4 leading-relaxed">
+              Hinton Workspace was created to offer a calmer, flexible way of working and connecting — one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
+            </p>
+            <p className="font-sans text-gray-700 leading-relaxed">
+              Located within the historic Hinton St Mary estate, our buildings are carefully adapted to create calm, practical workspaces while respecting the estate&apos;s character. Modern work sits comfortably alongside history here.
+            </p>
+          </div>
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              src="https://www.youtube.com/embed/lK7NiAd0tzI"
+              title="Hinton Workspace"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+        </div>
+      </Section>
 
-Located within the historic Hinton St Mary estate, our buildings are carefully adapted to create calm, practical workspaces while respecting the estate's character. Modern work sits comfortably alongside history here.`}
-        image="/Website Images 2026/About/Estate.jpg"
-        imageAlt="Hinton Workspace exterior"
-      />
+      {/* Estate Image */}
+      <Section>
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-video rounded-lg overflow-hidden">
+            <Image
+              src="/Website Images 2026/About/Estate.jpg"
+              alt="Hinton Workspace estate"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </Section>
 
       {/* Quote */}
       <Section bgColor="white">

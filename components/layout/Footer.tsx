@@ -1,18 +1,25 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Facebook, Instagram, Linkedin } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-dark-green text-white">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <div>
-            <h3 className="font-serif font-bold text-lg mb-4">Hinton Workspace</h3>
-            <p className="font-sans text-sm text-gray-300 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          {/* Logo & Description */}
+          <div className="col-span-2 md:col-span-1 text-center md:text-left">
+            <Image
+              src="/Website Images 2026/Logos/HINTON_WORKSPACE_LOGO_GREEN_RGB.png"
+              alt="Hinton Workspace"
+              width={140}
+              height={44}
+              className="brightness-0 invert mb-4 mx-auto md:mx-0"
+            />
+            <p className="font-sans text-sm text-gray-300 mb-6">
               Flexible workspace in North Dorset where ideas come to life.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center md:justify-start">
               <a
                 href="https://www.facebook.com/hintonworkspace"
                 target="_blank"
@@ -46,7 +53,7 @@ export default function Footer() {
           {/* The Workspace */}
           <div>
             <h4 className="font-serif font-bold mb-4">The Workspace</h4>
-            <ul className="space-y-2 font-sans text-sm">
+            <ul className="space-y-2 font-sans text-sm text-gray-300">
               <li>
                 <Link href="/workspace/coworking" className="hover:text-pink transition-colors">
                   Coworking
@@ -58,18 +65,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/events" className="hover:text-pink transition-colors">
-                  Events & Workshops
+                <Link href="/whats-on" className="hover:text-pink transition-colors">
+                  What&apos;s On
                 </Link>
               </li>
               <li>
-                <Link href="/workspace/sitting-room" className="hover:text-pink transition-colors">
-                  The Sitting Room
-                </Link>
-              </li>
-              <li>
-                <Link href="/wellbeing" className="hover:text-pink transition-colors">
-                  Wellbeing
+                <Link href="/workspace/flexible-office" className="hover:text-pink transition-colors">
+                  Flexible Office
                 </Link>
               </li>
             </ul>
@@ -78,10 +80,15 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h4 className="font-serif font-bold mb-4">Company</h4>
-            <ul className="space-y-2 font-sans text-sm">
+            <ul className="space-y-2 font-sans text-sm text-gray-300">
               <li>
                 <Link href="/about-us" className="hover:text-pink transition-colors">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/wellbeing" className="hover:text-pink transition-colors">
+                  Wellbeing
                 </Link>
               </li>
               <li>
@@ -99,6 +106,25 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* Press */}
+          <div>
+            <h4 className="font-serif font-bold mb-4">Press</h4>
+            <ul className="space-y-2 font-sans text-sm text-gray-300">
+              <li>
+                <Link href="/press" className="hover:text-pink transition-colors">
+                  Press & Media
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="font-serif font-bold mb-4">Legal</h4>
+            <ul className="space-y-2 font-sans text-sm text-gray-300">
               <li>
                 <Link href="/legal/privacy" className="hover:text-pink transition-colors">
                   Privacy Policy
@@ -109,29 +135,12 @@ export default function Footer() {
                   Terms & Conditions
                 </Link>
               </li>
+              <li>
+                <Link href="/legal/cookies" className="hover:text-pink transition-colors">
+                  Cookie Policy
+                </Link>
+              </li>
             </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-serif font-bold mb-4">Visit Us</h4>
-            <address className="font-sans text-sm text-gray-300 not-italic space-y-2">
-              <p>
-                Hinton Workspace, The Building Yard<br />
-                Hinton St Mary, Sturminster Newton<br />
-                DT10 1NA
-              </p>
-              <p>
-                <a href="tel:01258472623" className="hover:text-pink transition-colors">
-                  01258 472623
-                </a>
-              </p>
-              <p>
-                <a href="mailto:reception@hintonworkspace.co.uk" className="hover:text-pink transition-colors">
-                  reception@hintonworkspace.co.uk
-                </a>
-              </p>
-            </address>
           </div>
         </div>
 

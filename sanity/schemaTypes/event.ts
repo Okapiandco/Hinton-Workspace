@@ -50,6 +50,16 @@ export const event = defineType({
       },
     }),
     defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'string',
+    }),
+    defineField({
+      name: 'bookingUrl',
+      title: 'Booking URL',
+      type: 'url',
+    }),
+    defineField({
       name: 'status',
       title: 'Status',
       type: 'string',

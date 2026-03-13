@@ -2,12 +2,50 @@ import { client } from '@/lib/sanity/client'
 import { groq } from 'next-sanity'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
+import LightboxGallery from '@/components/ui/Lightbox'
 import { notFound } from 'next/navigation'
 
 interface WorkspacePageProps {
   params: Promise<{ slug: string }>
+}
+
+const workspaceImages: Record<string, { hero: string; gallery?: string[] }> = {
+  'meeting-rooms': {
+    hero: '/Website Images 2026/Meeting Rooms/Meeting room.jpg',
+    gallery: [
+      '/Website Images 2026/Meeting Rooms/The Long Room.jpg',
+      "/Website Images 2026/Meeting Rooms/Clerk's Office.JPG",
+      "/Website Images 2026/Meeting Rooms/Clerk's Office Window.jpg",
+      '/Website Images 2026/Meeting Rooms/The Sitting Room.jpg',
+      '/Website Images 2026/Meeting Rooms/The Workshop.jpg',
+    ],
+  },
+  coworking: {
+    hero: '/Website Images 2026/Coworking/Coworking and Pods.jpg',
+    gallery: [
+      '/Website Images 2026/Coworking/Fireplace.jpg',
+      '/Website Images 2026/Coworking/Front Desk.jpg',
+      '/Website Images 2026/Coworking/Outside area.jpg',
+    ],
+  },
+  workshop: {
+    hero: '/Website Images 2026/The Workshop.jpg',
+  },
+  'sitting-room': {
+    hero: '/Website Images 2026/The Snug.jpg',
+    gallery: [
+      '/Website Images 2026/Meeting Rooms/The Sitting Room.jpg',
+    ],
+  },
+  'clerks-office': {
+    hero: "/Website Images 2026/Meeting Rooms/Clerk's Office.JPG",
+    gallery: [
+      "/Website Images 2026/Meeting Rooms/Clerk's Office Window.jpg",
+    ],
+  },
 }
 
 async function getWorkspacePage(slug: string) {
@@ -48,6 +86,7 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
   }
 
   const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
+  const images = workspaceImages[slug]
 
   return (
     <>
@@ -75,8 +114,25 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
         </div>
       </Section>
 
+      {/* Hero Image */}
+      {images?.hero && (
+        <Section bgColor="white" className="pt-0">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative aspect-video rounded-lg overflow-hidden">
+              <Image
+                src={images.hero}
+                alt={page.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </Section>
+      )}
+
       {/* Content */}
-      <Section bgColor="white">
+      <Section>
         <div className="max-w-3xl mx-auto">
           <div className="prose font-sans text-gray-700">
             {page.content &&
@@ -85,6 +141,37 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
                   {block.children?.[0]?.text}
                 </p>
               ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Image Gallery */}
+      {images?.gallery && images.gallery.length > 0 && (
+        <Section bgColor="white">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-serif font-bold text-dark-green mb-8 text-center">Gallery</h2>
+            <LightboxGallery
+              images={images.gallery.map((img, idx) => ({
+                src: img,
+                alt: `${page.title} - image ${idx + 1}`,
+              }))}
+            />
+          </div>
+        </Section>
+      )}
+
+      {/* CTA */}
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-serif font-bold text-dark-green mb-4">Ready to book?</h2>
+          <p className="font-sans text-gray-600 mb-6">Book this space online or get in touch to arrange a tour.</p>
+          <div className="flex items-center justify-center gap-4">
+            <a href={spacebringUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="primary" size="lg">Book Now</Button>
+            </a>
+            <Link href="/contact">
+              <Button variant="outline" size="lg">Contact Us</Button>
+            </Link>
           </div>
         </div>
       </Section>

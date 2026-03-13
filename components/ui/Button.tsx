@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline'
+  variant?: 'primary' | 'secondary' | 'outline' | 'outline-light'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
 }
@@ -20,6 +20,8 @@ export default function Button({
     secondary: 'bg-pink text-white hover:bg-[#C49A85]',
     outline:
       'border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white',
+    'outline-light':
+      'border-2 border-white text-white hover:bg-white hover:text-dark-green',
   }
 
   const sizes = {

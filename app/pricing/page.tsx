@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
+import SchemaScript from '@/components/SchemaScript'
+import { priceSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Pricing | Hinton Workspace Dorset',
@@ -72,9 +74,23 @@ const faqs = [
   },
 ]
 
+const priceSchemas = plans.map((plan) => priceSchema({
+  name: plan.title,
+  price: plan.price.replace('£', ''),
+  description: plan.description,
+}))
+
 export default function PricingPage() {
   return (
     <>
+      <SchemaScript schema={{
+        '@context': 'https://schema.org',
+        '@type': 'CoworkingSpace',
+        name: 'Hinton Workspace',
+        url: 'https://hintonworkspace.co.uk',
+        makesOffer: priceSchemas,
+      }} />
+
       {/* Header */}
       <Section className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto text-center">

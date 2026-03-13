@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { urlForImage } from '@/lib/sanity/image'
 import { notFound } from 'next/navigation'
+import SchemaScript from '@/components/SchemaScript'
+import { articleSchema, breadcrumbSchema } from '@/lib/schema'
 
 interface PostPageProps {
   params: Promise<{ slug: string }>
@@ -80,8 +82,28 @@ export default async function PostPage({ params }: PostPageProps) {
     ? urlForImage(post.featuredImage)?.url()
     : null
 
+  const baseUrl = 'https://hintonworkspace.co.uk'
+
   return (
     <article className="max-w-3xl mx-auto px-4 py-16">
+      <SchemaScript
+        schema={articleSchema({
+          title: post.title,
+          description: post.excerpt || '',
+          url: `${baseUrl}/news/${post.slug.current}`,
+          image: imageUrl || undefined,
+          datePublished: post.publishedAt,
+          authorName: post.author?.name,
+        })}
+      />
+      <SchemaScript
+        schema={breadcrumbSchema([
+          { name: 'Home', url: baseUrl },
+          { name: 'News', url: `${baseUrl}/news` },
+          { name: post.title, url: `${baseUrl}/news/${post.slug.current}` },
+        ])}
+      />
+
       {/* Featured Image */}
       {imageUrl && (
         <div className="mb-8 rounded-lg overflow-hidden shadow-lg">

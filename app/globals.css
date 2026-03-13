@@ -15,21 +15,23 @@
   font-weight: 400;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  background-color: #FAF5F2;
-}
+  body {
+    background-color: #FAF5F2;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  color: #153734;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: #153734;
+  }
 
-body, p, span {
-  font-family: var(--font-sans);
+  body, p, span {
+    font-family: var(--font-sans);
+  }
 }
 
 /* Keap Form Styles */

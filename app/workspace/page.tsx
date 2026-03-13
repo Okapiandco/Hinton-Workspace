@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Workspaces | Hinton Workspace Dorset',
@@ -66,10 +67,14 @@ export default function WorkspacesPage() {
           {workspaces.map((workspace) => (
             <Link key={workspace.slug} href={`/workspace/${workspace.slug}`}>
               <div className="bg-cream border border-light-pink rounded-lg overflow-hidden h-full hover:shadow-lg transition-shadow cursor-pointer group">
-                <div
-                  className="h-48 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${workspace.image})` }}
-                />
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={workspace.image}
+                    alt={workspace.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <div className="p-6">
                   <h2 className="text-2xl font-serif font-bold text-dark-green mb-3 group-hover:text-pink transition-colors">
                     {workspace.title}

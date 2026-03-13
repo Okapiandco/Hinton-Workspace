@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hintonworkspace.co.uk/sitemap.xml
+
+# Block admin/studio paths
+Disallow: /studio
+Disallow: /api/

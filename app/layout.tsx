@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Libre_Baskerville, Josefin_Sans } from 'next/font/google'
+import { Libre_Baskerville, DM_Sans } from 'next/font/google'
 import SiteLayout from '@/components/layout/RootLayout'
 import './globals.css'
 
@@ -9,21 +9,63 @@ const baskerville = Libre_Baskerville({
   weight: ['400', '700'],
 })
 
-const josefin = Josefin_Sans({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-sans',
   weight: ['400', '500', '700'],
 })
 
 export const metadata: Metadata = {
-  title: 'Hinton Workspace | Flexible Coworking in North Dorset',
+  metadataBase: new URL('https://hintonworkspace.co.uk'),
+  title: {
+    default: 'Hinton Workspace | Flexible Coworking in North Dorset',
+    template: '%s | Hinton Workspace',
+  },
   description:
-    'Flexible workspace in North Dorset where ideas come to life. Coworking desks, meeting rooms, and community.',
+    'Flexible coworking space in North Dorset. Hot desks, meeting rooms, and event spaces in a calm, professional environment.',
+  keywords: [
+    'coworking',
+    'coworking space',
+    'North Dorset',
+    'hot desk',
+    'meeting rooms',
+    'Sturminster Newton',
+    'Hinton St Mary',
+    'flexible workspace',
+    'remote working',
+    'Dorset office space',
+  ],
+  authors: [{ name: 'Hinton Workspace' }],
   openGraph: {
     title: 'Hinton Workspace | Flexible Coworking in North Dorset',
     description:
-      'Flexible workspace in North Dorset where ideas come to life.',
+      'Flexible coworking space in North Dorset. Hot desks, meeting rooms, and event spaces.',
+    url: 'https://hintonworkspace.co.uk',
+    siteName: 'Hinton Workspace',
     type: 'website',
+    locale: 'en_GB',
+    images: [
+      {
+        url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hinton Workspace - Flexible Coworking in North Dorset',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hinton Workspace | Flexible Coworking in North Dorset',
+    description:
+      'Flexible coworking space in North Dorset. Hot desks, meeting rooms, and event spaces.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk',
   },
 }
 
@@ -33,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${baskerville.variable} ${josefin.variable}`}>
+    <html lang="en" className={`${baskerville.variable} ${dmSans.variable}`}>
       <head>
         <script
           async

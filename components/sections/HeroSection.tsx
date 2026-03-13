@@ -2,14 +2,15 @@ import Image from 'next/image'
 import Button from '@/components/ui/Button'
 
 interface HeroSectionProps {
-  title: string
+  title: React.ReactNode
   subtitle: string
   body?: string
   backgroundImage?: string
+  backgroundVideo?: string
   ctas?: Array<{
     text: string
     href: string
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'outline' | 'outline-light'
   }>
 }
 
@@ -18,34 +19,46 @@ export default function HeroSection({
   subtitle,
   body,
   backgroundImage,
+  backgroundVideo,
   ctas,
 }: HeroSectionProps) {
   return (
-    <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
-      {backgroundImage && (
+    <section className="relative min-h-[100svh] md:h-[650px] flex items-end overflow-hidden">
+      {backgroundVideo && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      )}
+      {!backgroundVideo && backgroundImage && (
         <Image
           src={backgroundImage}
-          alt={title}
+          alt=""
           fill
           priority
           className="absolute inset-0 object-cover"
         />
       )}
-      <div className="absolute inset-0 bg-dark-green/60" />
-      <div className="relative z-10 text-center max-w-3xl mx-auto px-4">
-        <p className="text-lg md:text-xl font-sans text-pink mb-4 tracking-wide uppercase">
+      <div className="absolute inset-0 bg-dark-green/50" />
+      <div className="relative z-10 text-left max-w-7xl w-full mx-auto px-4 pb-16">
+        <p className="text-sm font-sans text-pink mb-4 tracking-[0.2em] uppercase">
           {subtitle}
         </p>
-        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight max-w-2xl">
           {title}
         </h1>
         {body && (
-          <p className="text-lg font-sans text-gray-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base font-sans text-white/90 mb-8 max-w-lg leading-relaxed">
             {body}
           </p>
         )}
         {ctas && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
             {ctas.map((cta, idx) => (
               <a
                 key={idx}
