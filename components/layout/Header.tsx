@@ -69,7 +69,7 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50">
+    <header className="sticky top-0 z-50 header-animate">
       {/* Announcement Bar */}
       <div className="bg-dark-green text-white">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm font-sans">
@@ -145,7 +145,7 @@ export default function Header() {
               href={spacebringUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block border border-dark-green text-dark-green px-6 py-2 rounded font-sans font-semibold hover:bg-dark-green hover:text-white transition-colors text-sm"
+              className="hidden sm:inline-block bg-dark-green text-white px-6 py-2 rounded font-sans font-semibold hover:bg-[#0F2321] transition-colors text-sm float-in hover-float shadow-md"
             >
               Book a Tour
             </a>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'outline-light'
+  variant?: 'primary' | 'secondary' | 'outline' | 'outline-light' | 'book-tour'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
 }
@@ -22,6 +22,8 @@ export default function Button({
       'border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white',
     'outline-light':
       'border-2 border-white text-white hover:bg-white hover:text-dark-green',
+    'book-tour':
+      'bg-dark-green text-white hover:bg-[#0F2321] shadow-lg',
   }
 
   const sizes = {

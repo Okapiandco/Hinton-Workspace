@@ -10,7 +10,7 @@ interface HeroSectionProps {
   ctas?: Array<{
     text: string
     href: string
-    variant?: 'primary' | 'secondary' | 'outline' | 'outline-light'
+    variant?: 'primary' | 'secondary' | 'outline' | 'outline-light' | 'book-tour'
   }>
 }
 
@@ -58,7 +58,7 @@ export default function HeroSection({
           </p>
         )}
         {ctas && (
-          <div className="hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             {ctas.map((cta, idx) => (
               <a
                 key={idx}
@@ -69,6 +69,7 @@ export default function HeroSection({
                     ? 'noopener noreferrer'
                     : undefined
                 }
+                className={idx === 0 ? 'float-in' : 'float-in-delay hover-float'}
               >
                 <Button variant={cta.variant || 'primary'} size="lg">
                   {cta.text}
