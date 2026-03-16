@@ -21,8 +21,8 @@ const faqs = [
   { question: 'Can I hire a meeting room in North Dorset?', answer: 'Yes, our meeting rooms are available for hire. They are equipped with presentation technology, high-speed Wi-Fi, and natural light.' },
   { question: 'Do you offer event space hire in Dorset?', answer: 'Yes! We host team away days, corporate events, workshops, and special events. Our facilities can accommodate up to 100 guests.' },
   { question: 'Is there parking at Hinton Workspace?', answer: 'Yes, free on-site parking is available for all members and visitors.' },
-  { question: 'Do you offer coworking memberships?', answer: 'Yes, we offer day passes, 10-day passes, and monthly memberships. No long-term contracts required.' },
-  { question: 'Can I book a desk for just one day?', answer: 'Absolutely! Day passes are available on a pay-as-you-go basis at £30 per day.' },
+  { question: 'Do you offer coworking memberships?', answer: 'Yes, we offer day passes, 4-day passes, 8-day passes, and unlimited monthly memberships. No long-term contracts required.' },
+  { question: 'Can I book a desk for just one day?', answer: 'Absolutely! Day passes are available on a pay-as-you-go basis at £20 per day.' },
   { question: 'Is Hinton Workspace suitable for corporate away days?', answer: 'Yes! We host team away days and corporate events with full catering and AV support available.' },
   { question: 'Do you host networking events in Dorset?', answer: "Yes! We host regular workshops, talks, networking events, and community gatherings. Check our What's On page for upcoming events." },
   { question: 'What makes Hinton Workspace different from other coworking spaces?', answer: 'We offer a unique combination of rural calm and professional energy, set within the historic Hinton St Mary estate with on-site wellbeing services.' },
@@ -257,19 +257,23 @@ export default function HomePage() {
             <p className="text-lg font-sans text-gray-200">Flexible options designed to suit your work style. No long-term commitments required.</p>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {[
             {
-              title: 'Day Pass', subtitle: 'Perfect for occasional use', price: '£30', per: 'per day',
-              features: ['Access 08:30–17:00', 'High-speed WiFi', 'Tea & coffee included', 'Kitchen access', 'Dog friendly', 'Free parking'],
+              title: 'Day Pass', subtitle: 'Perfect for occasional visits.', price: '£20', per: '',
+              features: ['Tea & coffee', 'Free parking', 'Fast wifi', 'Quiet pods'],
             },
             {
-              title: '10-Day Pass', subtitle: 'Ideal for flexible workers', price: '£250', per: 'for 10 days', featured: true,
-              features: ['10 day passes', 'Access 08:30–17:00', 'Meeting room credits', 'All amenities included', 'Community events access', 'Free parking'],
+              title: '4 Day Pass', subtitle: 'Use any 4 days in a month (available Monday to Friday)', price: '£49', per: '/ month',
+              features: ['Tea & coffee', 'Free parking', 'Fast wifi', 'Quiet pods'],
             },
             {
-              title: 'Monthly', subtitle: 'For dedicated professionals', price: '£270', per: 'per month',
-              features: ['Unlimited access', 'Meeting room bookings included', '24/7 access available', 'Business address use', 'All amenities included', 'Free parking'],
+              title: '8 Day Pass', subtitle: 'Use any 8 days in a month (available Monday to Friday)', price: '£99', per: '/ month', featured: true,
+              features: ['Tea & coffee', 'Free parking', 'Fast wifi', 'Quiet pods'],
+            },
+            {
+              title: 'Unlimited Access', subtitle: 'For dedicated professionals', price: '£249', per: '/ month',
+              features: ['Unlimited workspace', '24/7 access', 'Meeting rooms', 'Community events', 'Tea & coffee', 'Free parking', 'Fast wifi'],
             },
           ].map((plan, idx) => (
             <ScrollReveal key={idx} delay={idx * 150}>

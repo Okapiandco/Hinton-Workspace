@@ -7,7 +7,7 @@ import { priceSchema } from '@/lib/schema'
 export const metadata: Metadata = {
   title: 'Pricing | Hinton Workspace Dorset',
   description:
-    'Flexible membership options from £30 per day to £270 per month. No long-term commitments.',
+    'Flexible membership options from £20 per day to £249 per month. No long-term commitments.',
 }
 
 const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
@@ -15,46 +15,55 @@ const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizati
 const plans = [
   {
     title: 'Day Pass',
-    price: '£30',
-    period: 'per day',
-    description: 'Perfect for occasional use',
+    price: '£20',
+    period: '',
+    description: 'Perfect for occasional visits.',
     features: [
-      'Access 08:30–17:00',
-      'High-speed WiFi',
-      'Tea & coffee included',
-      'Kitchen access',
-      'Dog friendly',
+      'Tea & coffee',
       'Free parking',
+      'Fast wifi',
+      'Quiet pods',
     ],
   },
   {
-    title: '10-Day Pass',
-    price: '£250',
-    period: 'for 10 days',
-    description: 'Ideal for flexible workers',
+    title: '4 Day Pass',
+    price: '£49',
+    period: '/ month',
+    description: 'Use any 4 days in a month (available Monday to Friday)',
+    features: [
+      'Tea & coffee',
+      'Free parking',
+      'Fast wifi',
+      'Quiet pods',
+    ],
+  },
+  {
+    title: '8 Day Pass',
+    price: '£99',
+    period: '/ month',
+    description: 'Use any 8 days in a month (available Monday to Friday)',
     featured: true,
     badge: 'BEST VALUE',
     features: [
-      '10 day passes',
-      'Access 08:30–17:00',
-      'Meeting room credits',
-      'All amenities included',
-      'Community events access',
+      'Tea & coffee',
       'Free parking',
+      'Fast wifi',
+      'Quiet pods',
     ],
   },
   {
-    title: 'Monthly',
-    price: '£270',
-    period: 'per month',
+    title: 'Unlimited Access',
+    price: '£249',
+    period: '/ month',
     description: 'For dedicated professionals',
     features: [
-      'Unlimited access',
-      'Meeting room bookings',
-      '24/7 access available',
-      'Business address use',
-      'All amenities included',
+      'Unlimited workspace',
+      '24/7 access',
+      'Meeting rooms',
+      'Community events',
+      'Tea & coffee',
       'Free parking',
+      'Fast wifi',
     ],
   },
 ]
@@ -106,7 +115,7 @@ export default function PricingPage() {
 
       {/* Pricing Cards */}
       <Section bgColor="white">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {plans.map((plan, idx) => (
             <div
               key={idx}
