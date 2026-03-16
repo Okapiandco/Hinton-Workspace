@@ -37,6 +37,14 @@ export const metadata: Metadata = {
     'Dorset office space',
   ],
   authors: [{ name: 'Hinton Workspace' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
   openGraph: {
     title: 'Hinton Workspace | Flexible Coworking in North Dorset',
     description:
@@ -64,6 +72,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   alternates: {
     canonical: 'https://hintonworkspace.co.uk',

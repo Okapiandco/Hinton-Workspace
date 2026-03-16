@@ -71,9 +71,29 @@ export async function generateMetadata({
     return { title: 'Workspace Not Found' }
   }
 
+  const title = page.seo?.metaTitle || `${page.title} | Hinton Workspace`
+  const description = page.seo?.metaDescription || ''
+  const heroImage = workspaceImages[slug]?.hero
+  const pageUrl = `https://hintonworkspace.co.uk/workspace/${slug}`
+
   return {
-    title: page.seo?.metaTitle || `${page.title} | Hinton Workspace`,
-    description: page.seo?.metaDescription || '',
+    title,
+    description,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title,
+      description,
+      url: pageUrl,
+      ...(heroImage && { images: [{ url: heroImage, width: 1200, height: 630, alt: title }] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      ...(heroImage && { images: [heroImage] }),
+    },
   }
 }
 

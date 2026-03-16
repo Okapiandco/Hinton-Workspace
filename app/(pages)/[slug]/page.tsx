@@ -31,12 +31,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const title = page.seo?.metaTitle || page.title
+  const description = page.seo?.metaDescription || ''
+  const pageUrl = `https://hintonworkspace.co.uk/${slug}`
+
   return {
-    title: page.seo?.metaTitle || page.title,
-    description: page.seo?.metaDescription || '',
+    title,
+    description,
+    alternates: {
+      canonical: pageUrl,
+    },
     openGraph: {
-      title: page.seo?.metaTitle || page.title,
-      description: page.seo?.metaDescription || '',
+      title,
+      description,
+      url: pageUrl,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   }
 }

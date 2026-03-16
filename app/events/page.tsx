@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   title: 'Events & Workshops | Hinton Workspace',
   description:
     'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/events',
+  },
+  openGraph: {
+    title: 'Events & Workshops | Hinton Workspace',
+    description:
+      'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+    url: 'https://hintonworkspace.co.uk/events',
+    images: [
+      {
+        url: '/Website Images 2026/Logos/HINTON_WORKSPACE_LOGO_GREEN_RGB.png',
+        width: 1200,
+        height: 630,
+        alt: 'Hinton Workspace Events',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Events & Workshops | Hinton Workspace',
+    description:
+      'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+  },
 }
 
 async function getEvents() {

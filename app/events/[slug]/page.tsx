@@ -9,15 +9,13 @@ import { formatDate, formatTime } from '@/lib/calendar'
 import { notFound } from 'next/navigation'
 import SchemaScript from '@/components/SchemaScript'
 import { eventSchema, breadcrumbSchema } from '@/lib/schema'
+import { urlForImage } from '@/lib/sanity/image'
 
 interface EventPageProps {
   params: Promise<{ slug: string }>
 }
 
-const eventImages: Record<string, string> = {
-  'claude-ai-course-for-smes': '/images/events/Claude-for-SMEs.png',
-  'sturminster-newton-business-awards': '/images/events/Sturminster awards.png',
-}
+const LOGO_OG_IMAGE = '/Website Images 2026/Logos/HINTON_WORKSPACE_LOGO_GREEN_RGB.png'
 
 async function getEvent(slug: string) {
   return await client.fetch(
@@ -32,6 +30,7 @@ async function getEvent(slug: string) {
       price,
       bookingUrl,
       status,
+      featuredImage,
     }`,
     { slug }
   )
@@ -47,9 +46,38 @@ export async function generateMetadata({
     return { title: 'Event Not Found' }
   }
 
+  const description = event.description?.[0]?.children?.[0]?.text || ''
+  const ogImage = event.featuredImage
+    ? urlForImage(event.featuredImage)?.width(1200).height(630).url() || LOGO_OG_IMAGE
+    : LOGO_OG_IMAGE
+  const eventUrl = `https://hintonworkspace.co.uk/events/${event.slug.current}`
+
   return {
     title: `${event.title} | Hinton Workspace Events`,
-    description: event.description?.[0]?.children?.[0]?.text || '',
+    description,
+    alternates: {
+      canonical: eventUrl,
+    },
+    openGraph: {
+      title: event.title,
+      description,
+      url: eventUrl,
+      type: 'article',
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: event.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: event.title,
+      description,
+      images: [ogImage],
+    },
   }
 }
 
@@ -64,7 +92,9 @@ export default async function EventPage({ params }: EventPageProps) {
   const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
   const baseUrl = 'https://hintonworkspace.co.uk'
   const descriptionText = event.description?.[0]?.children?.[0]?.text || ''
-  const imageSrc = eventImages[event.slug?.current]
+  const imageSrc = event.featuredImage
+    ? urlForImage(event.featuredImage)?.width(800).height(450).url()
+    : null
   const bookingHref = event.bookingUrl || spacebringUrl
 
   return (
@@ -77,6 +107,7 @@ export default async function EventPage({ params }: EventPageProps) {
           startDate: event.startDate,
           endDate: event.endDate,
           location: event.location,
+          image: imageSrc || undefined,
         })}
       />
       <SchemaScript

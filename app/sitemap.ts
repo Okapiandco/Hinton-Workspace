@@ -32,27 +32,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/legal/terms`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ]
 
-  // Blog posts from Sanity
+  // Blog posts from Sanity (use _updatedAt for accurate lastModified)
   const posts = await client.fetch(
-    groq`*[_type == "post"] | order(publishedAt desc) { slug, publishedAt }`
+    groq`*[_type == "post"] | order(publishedAt desc) { slug, publishedAt, _updatedAt }`
   )
   const postPages: MetadataRoute.Sitemap = posts.map((post: any) => ({
     url: `${baseUrl}/news/${post.slug.current}`,
-    lastModified: safeDate(post.publishedAt),
+    lastModified: safeDate(post._updatedAt || post.publishedAt),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
 
-  // Events from Sanity
+  // Events from Sanity (use _updatedAt for accurate lastModified)
   const events = await client.fetch(
-    groq`*[_type == "event"] | order(startDate desc) { slug, startDate }`
+    groq`*[_type == "event"] | order(startDate desc) { slug, startDate, _updatedAt }`
   )
   const eventPages: MetadataRoute.Sitemap = events.map((event: any) => ({
     url: `${baseUrl}/events/${event.slug.current}`,
-    lastModified: safeDate(event.startDate),
+    lastModified: safeDate(event._updatedAt || event.startDate),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }))
 
-  return [...staticPages, ...postPages, ...eventPages]
+  // Dynamic pages from Sanity
+  const pages = await client.fetch(
+    groq`*[_type == "page" && published == true] { slug, _updatedAt }`
+  )
+  const dynamicPages: MetadataRoute.Sitemap = pages.map((page: any) => ({
+    url: `${baseUrl}/${page.slug.current}`,
+    lastModified: safeDate(page._updatedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }))
+
+  return [...staticPages, ...postPages, ...eventPages, ...dynamicPages]
 }

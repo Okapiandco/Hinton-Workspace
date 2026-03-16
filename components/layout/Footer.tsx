@@ -109,13 +109,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Press */}
+          {/* Blog */}
           <div>
-            <h4 className="font-serif font-bold mb-4">Press</h4>
+            <h4 className="font-serif font-bold mb-4">Blog</h4>
             <ul className="space-y-2 font-sans text-sm text-gray-300">
               <li>
-                <Link href="/press" className="hover:text-pink transition-colors">
-                  Press & Media
+                <Link href="/news" className="hover:text-pink transition-colors">
+                  News & Insights
                 </Link>
               </li>
             </ul>

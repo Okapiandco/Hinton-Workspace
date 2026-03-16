@@ -1,6 +1,9 @@
 import { client } from '@/lib/sanity/client'
 import { groq } from 'next-sanity'
+import { urlForImage } from '@/lib/sanity/image'
+import { blogImages } from '@/lib/blog-images'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -23,6 +26,7 @@ async function getPosts() {
       excerpt,
       publishedAt,
       author->{name},
+      featuredImage,
     }`
   )
 }
@@ -44,32 +48,52 @@ export default async function NewsPage() {
           <p className="text-gray-500 font-sans">No posts yet. Check back soon.</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {posts.map((post: any) => (
-              <Link
-                key={post._id}
-                href={`/news/${post.slug.current}`}
-                className="group"
-              >
-                <div className="bg-white border border-light-pink rounded-lg p-6 hover:shadow-lg transition-shadow">
-                  <h2 className="text-2xl font-serif font-bold text-dark-green mb-3 group-hover:text-pink transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-gray-600 font-sans mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex justify-between items-center text-sm font-sans text-gray-500">
-                    <span>{post.author?.name || 'Hinton Workspace'}</span>
-                    <span>
-                      {new Date(post.publishedAt).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
-                      })}
-                    </span>
+            {posts.map((post: any) => {
+              const sanityImage = post.featuredImage
+                ? urlForImage(post.featuredImage)?.width(600).height(340).url()
+                : null
+              const localImage = blogImages[post.slug?.current]
+              const imageSrc = sanityImage || localImage || null
+
+              return (
+                <Link
+                  key={post._id}
+                  href={`/news/${post.slug.current}`}
+                  className="group"
+                >
+                  <div className="bg-white border border-light-pink rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    {imageSrc && (
+                      <div className="relative aspect-[16/9] overflow-hidden">
+                        <Image
+                          src={imageSrc}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <h2 className="text-2xl font-serif font-bold text-dark-green mb-3 group-hover:text-pink transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600 font-sans mb-4 line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      <div className="flex justify-between items-center text-sm font-sans text-gray-500">
+                        <span>{post.author?.name || 'Hinton Workspace'}</span>
+                        <span>
+                          {new Date(post.publishedAt).toLocaleDateString('en-GB', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric',
+                          })}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>
