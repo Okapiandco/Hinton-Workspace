@@ -5,9 +5,25 @@ import SchemaScript from '@/components/SchemaScript'
 import { priceSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'Pricing | Hinton Workspace Dorset',
+  title: 'Pricing – Membership Options at Hinton Workspace',
   description:
-    'Flexible membership options from £20 per day to £249 per month. No long-term commitments.',
+    'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month. No long-term commitments.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/pricing',
+  },
+  openGraph: {
+    title: 'Pricing – Membership Options at Hinton Workspace',
+    description:
+      'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month.',
+    url: 'https://hintonworkspace.co.uk/pricing',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing – Membership Options at Hinton Workspace',
+    description:
+      'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month.',
+  },
 }
 
 const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`

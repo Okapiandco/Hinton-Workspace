@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: 'Wellbeing | Hinton Workspace Dorset',
   description:
     'Movement, nutrition, and mental wellness at Hinton Workspace. PT gym and spa services available.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/wellbeing',
+  },
+  openGraph: {
+    title: 'Wellbeing | Hinton Workspace Dorset',
+    description:
+      'Movement, nutrition, and mental wellness at Hinton Workspace. PT gym and spa services available.',
+    url: 'https://hintonworkspace.co.uk/wellbeing',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wellbeing | Hinton Workspace Dorset',
+    description:
+      'Movement, nutrition, and mental wellness at Hinton Workspace. PT gym and spa services available.',
+  },
 }
 
 export default function WellbeingPage() {

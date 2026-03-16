@@ -8,6 +8,22 @@ export const metadata: Metadata = {
   title: 'FAQs | Hinton Workspace',
   description:
     'Frequently asked questions about coworking, meeting rooms, pricing, and booking at Hinton Workspace.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/faqs',
+  },
+  openGraph: {
+    title: 'FAQs | Hinton Workspace',
+    description:
+      'Frequently asked questions about coworking, meeting rooms, pricing, and booking at Hinton Workspace.',
+    url: 'https://hintonworkspace.co.uk/faqs',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQs | Hinton Workspace',
+    description:
+      'Frequently asked questions about coworking, meeting rooms, pricing, and booking at Hinton Workspace.',
+  },
 }
 
 const faqs = [

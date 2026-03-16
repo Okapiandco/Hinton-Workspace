@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import HeroSection from '@/components/sections/HeroSection'
 import FeatureCardsSection from '@/components/sections/FeatureCardsSection'
 import GoogleReviews from '@/components/sections/GoogleReviews'
@@ -7,9 +8,31 @@ import Accordion from '@/components/ui/Accordion'
 import LightboxGallery from '@/components/ui/Lightbox'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import SchemaScript from '@/components/SchemaScript'
-import { organizationSchema, localBusinessSchema } from '@/lib/schema'
+import { organizationSchema, localBusinessSchema, faqSchema, webSiteSchema } from '@/lib/schema'
 import Image from 'next/image'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Hinton Workspace | Flexible Coworking in North Dorset',
+  description:
+    'Hinton Workspace is a beautifully designed co-working space in the heart of Hinton St Mary. Flexible desks, meeting rooms, and event spaces for entrepreneurs, freelancers, and businesses.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk',
+  },
+  openGraph: {
+    title: 'Hinton Workspace | Flexible Coworking in North Dorset',
+    description:
+      'Hinton Workspace is a beautifully designed co-working space in the heart of Hinton St Mary. Flexible desks, meeting rooms, and event spaces.',
+    url: 'https://hintonworkspace.co.uk',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hinton Workspace | Flexible Coworking in North Dorset',
+    description:
+      'Flexible coworking space in North Dorset. Hot desks, meeting rooms, and event spaces in a calm, professional environment.',
+  },
+}
 
 const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
 
@@ -34,6 +57,8 @@ export default function HomePage() {
     <>
       <SchemaScript schema={organizationSchema()} />
       <SchemaScript schema={localBusinessSchema()} />
+      <SchemaScript schema={faqSchema(faqs)} />
+      <SchemaScript schema={webSiteSchema()} />
 
       {/* Hero */}
       <HeroSection

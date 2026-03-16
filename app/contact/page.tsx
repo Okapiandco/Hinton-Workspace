@@ -5,7 +5,23 @@ import Button from '@/components/ui/Button'
 export const metadata: Metadata = {
   title: 'Contact Hinton Workspace | Get in Touch',
   description:
-    'Get in touch with Hinton Workspace in North Dorset. Phone, email, or book a tour.',
+    'Join the Hinton Workspace community. Contact us today to learn more about our coworking spaces, book a tour or a trial day.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/contact',
+  },
+  openGraph: {
+    title: 'Contact Hinton Workspace | Get in Touch',
+    description:
+      'Join the Hinton Workspace community. Contact us today to learn more about our coworking spaces, book a tour or a trial day.',
+    url: 'https://hintonworkspace.co.uk/contact',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Hinton Workspace | Get in Touch',
+    description:
+      'Join the Hinton Workspace community. Contact us today to learn more about our coworking spaces, book a tour or a trial day.',
+  },
 }
 
 const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`

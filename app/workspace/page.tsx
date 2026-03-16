@@ -4,9 +4,25 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Workspaces | Hinton Workspace Dorset',
+  title: 'Hinton Workspace – Charming Rural Co-Working in Dorset',
   description:
-    'Explore our flexible workspace options: coworking, meeting rooms, and office space.',
+    'Historic Victorian workshop turned inspiring rural co-working in Dorset. Desks, pods, meeting rooms, EV charging & dog-friendly. Book today.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/workspace',
+  },
+  openGraph: {
+    title: 'Hinton Workspace – Charming Rural Co-Working in Dorset',
+    description:
+      'Historic Victorian workshop turned inspiring rural co-working in Dorset. Desks, pods, meeting rooms, EV charging & dog-friendly. Book today.',
+    url: 'https://hintonworkspace.co.uk/workspace',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hinton Workspace – Charming Rural Co-Working in Dorset',
+    description:
+      'Historic Victorian workshop turned inspiring rural co-working in Dorset. Desks, pods, meeting rooms, EV charging & dog-friendly.',
+  },
 }
 
 const workspaces = [

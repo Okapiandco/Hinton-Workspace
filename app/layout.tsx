@@ -91,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${baskerville.variable} ${dmSans.variable}`}>
+    <html lang="en-GB" className={`${baskerville.variable} ${dmSans.variable}`}>
       <body className="font-sans bg-cream text-gray-900">
         <SiteLayout>{children}</SiteLayout>
         <CookieConsent />

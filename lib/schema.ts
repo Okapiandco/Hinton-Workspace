@@ -198,6 +198,20 @@ export function aggregateRatingSchema({
   }
 }
 
+export function webSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Hinton Workspace',
+    url: 'https://hintonworkspace.co.uk',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://hintonworkspace.co.uk/?s={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
 export function priceSchema({
   name,
   price,

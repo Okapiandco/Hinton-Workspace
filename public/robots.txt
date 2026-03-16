@@ -1,8 +1,25 @@
 User-agent: *
 Allow: /
+Disallow: /studio
+Disallow: /studio/
+Disallow: /api/
+Disallow: /?s=
+Disallow: /search/
 
 Sitemap: https://hintonworkspace.co.uk/sitemap.xml
 
-# Block admin/studio paths
-Disallow: /studio
-Disallow: /api/
+# Allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GeminiBot
+Allow: /

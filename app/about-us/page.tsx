@@ -1,16 +1,40 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Image from 'next/image'
+import SchemaScript from '@/components/SchemaScript'
+import { organizationSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
-  title: 'About Hinton Workspace | Rural Coworking Dorset',
+  title: 'About Hinton Workspace | Dorset Coworking & Community',
   description:
-    "Learn about Hinton Workspace's mission to offer calm, flexible working in rural Dorset.",
+    "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/about-us',
+  },
+  openGraph: {
+    title: 'About Hinton Workspace | Dorset Coworking & Community',
+    description:
+      "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+    url: 'https://hintonworkspace.co.uk/about-us',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Hinton Workspace | Dorset Coworking & Community',
+    description:
+      "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+  },
 }
 
 export default function AboutPage() {
   return (
     <>
+      <SchemaScript schema={organizationSchema()} />
+      <SchemaScript schema={breadcrumbSchema([
+        { name: 'Home', url: 'https://hintonworkspace.co.uk' },
+        { name: 'About Us', url: 'https://hintonworkspace.co.uk/about-us' },
+      ])} />
+
       {/* Hero */}
       <Section className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto text-center">

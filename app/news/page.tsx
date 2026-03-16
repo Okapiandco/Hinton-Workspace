@@ -9,11 +9,22 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'News & Insights | Hinton Workspace',
   description:
-    'Latest stories and insights from the Hinton Workspace community.',
+    'Explore the Hinton Workspace blog: inspiration, productivity tips, community news, and workplace stories from rural Dorset.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/news',
+  },
   openGraph: {
     title: 'News & Insights | Hinton Workspace',
     description:
-      'Latest stories and insights from the Hinton Workspace community.',
+      'Explore the Hinton Workspace blog: inspiration, productivity tips, community news, and workplace stories from rural Dorset.',
+    url: 'https://hintonworkspace.co.uk/news',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'News & Insights | Hinton Workspace',
+    description:
+      'Explore the Hinton Workspace blog: inspiration, productivity tips, community news, and workplace stories from rural Dorset.',
   },
 }
 

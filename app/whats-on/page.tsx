@@ -11,6 +11,22 @@ export const metadata: Metadata = {
   title: "What's On | Hinton Workspace",
   description:
     'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/whats-on',
+  },
+  openGraph: {
+    title: "What's On | Hinton Workspace",
+    description:
+      'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+    url: 'https://hintonworkspace.co.uk/whats-on',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "What's On | Hinton Workspace",
+    description:
+      'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+  },
 }
 
 const eventImages: Record<string, string> = {
