@@ -4,7 +4,7 @@ export const workspaceContent = {
     slug: 'workspace-coworking',
     description: `Our coworking space features 48 hot desks, natural light, high-speed Wi-Fi, soundproof pods, breakout areas, and a fully equipped kitchen.
 
-Whether you're a freelancer, remote worker, or small team, our coworking space offers the flexibility and community you need to do your best work. Drop in for a day or commit to a membership — the choice is yours.
+Whether you're a freelancer, remote worker, or small team, our coworking space offers the flexibility and community you need to do your best work. Drop in for a day or commit to a membership - the choice is yours.
 
 Features included:
 - 48 hot desks
@@ -21,7 +21,7 @@ Features included:
   workshop: {
     title: 'The Workshop',
     slug: 'workspace-workshop',
-    description: `The Workshop is our ground floor workspace — a thoughtfully designed space offering a productive environment for focused work and collaboration.
+    description: `The Workshop is our ground floor workspace - a thoughtfully designed space offering a productive environment for focused work and collaboration.
 
 With 24 desks for individual work and 2 private pods for confidential meetings or concentrated tasks, the ground floor provides the perfect environment for productivity and success. Underfloor heating keeps the space comfortable throughout the year.
 
@@ -57,7 +57,7 @@ Features included:
   meetingRooms: {
     title: 'Meeting Rooms',
     slug: 'workspace-meeting-rooms',
-    description: `Our meeting rooms are designed for focus and clarity — whether you're hosting a client presentation, team workshop, or strategy session.
+    description: `Our meeting rooms are designed for focus and clarity - whether you're hosting a client presentation, team workshop, or strategy session.
 
 Equipped with modern technology and comfortable seating, our rooms provide the professional environment you need without the corporate stuffiness.
 
@@ -76,7 +76,7 @@ Features included:
     slug: 'workspace-sitting-room',
     description: `The Sitting Room is our first-floor coworking space offering a cosy, collaborative environment with a blend of professional amenities and comfortable social areas.
 
-Combining practical work infrastructure with an inviting atmosphere, The Sitting Room is an alternative to traditional office environments — emphasising comfort alongside productivity.
+Combining practical work infrastructure with an inviting atmosphere, The Sitting Room is an alternative to traditional office environments - emphasising comfort alongside productivity.
 
 Features included:
 - Kitchen facilities

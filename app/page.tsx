@@ -39,7 +39,7 @@ const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizati
 const faqs = [
   { question: 'What is Hinton Workspace?', answer: 'Hinton Workspace is a flexible coworking space in North Dorset offering hot desks, meeting rooms, and event spaces. We provide a calm, professional environment for remote workers, freelancers, entrepreneurs, and small businesses.' },
   { question: 'Where is Hinton Workspace located?', answer: 'Hinton Workspace is located at The Building Yard, Hinton St Mary, Sturminster Newton, DT10 1NA in North Dorset.' },
-  { question: 'Who is Hinton Workspace for?', answer: "We're designed for anyone who works — remote workers, freelancers, founders, small business teams, charities, and individuals looking for an alternative to home working." },
+  { question: 'Who is Hinton Workspace for?', answer: "We're designed for anyone who works - remote workers, freelancers, founders, small business teams, charities, and individuals looking for an alternative to home working." },
   { question: 'Do you offer coworking desks in Dorset?', answer: 'Yes! Our coworking desks include high-speed WiFi, comfortable seating, tea and coffee, kitchen access, free parking, and access to community events.' },
   { question: 'Can I hire a meeting room in North Dorset?', answer: 'Yes, our meeting rooms are available for hire. They are equipped with presentation technology, high-speed Wi-Fi, and natural light.' },
   { question: 'Do you offer event space hire in Dorset?', answer: 'Yes! We host team away days, corporate events, workshops, and special events. Our facilities can accommodate up to 100 guests.' },
@@ -179,7 +179,7 @@ export default function HomePage() {
         <ScrollReveal>
           <div className="text-center mb-10">
             <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Life at Hinton</h2>
-            <p className="text-lg font-sans text-gray-600">A glimpse into our daily life — from focused work sessions to community gatherings.</p>
+            <p className="text-lg font-sans text-gray-600">A glimpse into our daily life - from focused work sessions to community gatherings.</p>
           </div>
         </ScrollReveal>
         <ScrollReveal delay={100} direction="scale">
@@ -203,7 +203,7 @@ export default function HomePage() {
               What&apos;s <em>Included</em>
             </h2>
             <p className="font-sans text-gray-700 mb-8 leading-relaxed">
-              Everything you need to work productively in a beautiful rural setting. No noisy caf&eacute; tables or crowded city hubs — just thoughtfully designed spaces where ideas can thrive.
+              Everything you need to work productively in a beautiful rural setting. No noisy caf&eacute; tables or crowded city hubs - just thoughtfully designed spaces where ideas can thrive.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[

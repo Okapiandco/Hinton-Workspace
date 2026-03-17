@@ -14,10 +14,10 @@ const pages: PageData[] = [
     slug: 'about-us',
     content: `Working Better. Together.
 
-Hinton Workspace was created to offer a calmer, flexible way of working and connecting — one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
+Hinton Workspace was created to offer a calmer, flexible way of working and connecting - one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
 
 A Word from Alice:
-"Hinton Workspace grew from a simple idea — that work doesn't have to feel rushed, noisy, or disconnected from real life. I wanted a space where people could focus properly, feel welcome, and leave the day with energy intact."
+"Hinton Workspace grew from a simple idea - that work doesn't have to feel rushed, noisy, or disconnected from real life. I wanted a space where people could focus properly, feel welcome, and leave the day with energy intact."
 
 The History:
 Located within the historic Hinton St Mary estate, our buildings are carefully adapted to create calm, practical workspaces while respecting the estate's character. Modern work sits comfortably alongside history here.`,
@@ -30,15 +30,15 @@ Located within the historic Hinton St Mary estate, our buildings are carefully a
     slug: 'pricing',
     content: `Flexible options designed to suit your work style. No long-term commitments required.
 
-Day Pass — Perfect for occasional use
+Day Pass - Perfect for occasional use
 £30 per day
 Access 08:30–17:00, High-speed WiFi, Tea & coffee, Kitchen access, Dog friendly
 
-Part-Time Pass — Ideal for flexible workers
+Part-Time Pass - Ideal for flexible workers
 £250 per 10 day passes
 10 day passes, Access 08:30–17:00, Meeting room credits, All amenities, Community events
 
-Full-Time Membership — For dedicated professionals
+Full-Time Membership - For dedicated professionals
 £270 per month
 Unlimited access, Meeting room bookings, 24/7 access, Business address use`,
     metaTitle: 'Pricing | Hinton Workspace Dorset',
@@ -70,7 +70,7 @@ Free parking available on site.`,
     content: `Frequently Asked Questions
 
 Do I need to book a desk?
-No booking required for day passes — just turn up during opening hours. Full-time members have 24/7 access.
+No booking required for day passes - just turn up during opening hours. Full-time members have 24/7 access.
 
 Can I bring my dog?
 Yes! Hinton Workspace is dog friendly. Well-behaved dogs are welcome in the coworking areas.

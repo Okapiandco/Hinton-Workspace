@@ -7,6 +7,7 @@ export interface CalendarEvent {
   endDate: string
   location: string
   status: 'draft' | 'published' | 'cancelled'
+  featuredImage?: { asset: { url: string } }
 }
 
 export function filterFutureEvents(events: CalendarEvent[]): CalendarEvent[] {

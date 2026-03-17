@@ -20,7 +20,7 @@ export const reviews: GoogleReview[] = [
   {
     reviewer_name: 'Sarah M.',
     review_text:
-      'A really lovely workspace — perfect for lone working as well as meetings and group sessions. The facilities are excellent, and the staff are genuinely friendly and helpful.',
+      'A really lovely workspace - perfect for lone working as well as meetings and group sessions. The facilities are excellent, and the staff are genuinely friendly and helpful.',
     review_rating: 5,
     relative_date: '2 months ago',
   },

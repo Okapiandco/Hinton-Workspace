@@ -45,6 +45,7 @@ async function getEvents() {
       endDate,
       location,
       status,
+      featuredImage { asset-> { url } },
     }`
   )
 }

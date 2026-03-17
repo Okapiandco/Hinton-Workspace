@@ -29,15 +29,19 @@ const workspaceImages: Record<string, { hero: string; gallery?: string[] }> = {
       '/Website Images 2026/Coworking/Fireplace.jpg',
       '/Website Images 2026/Coworking/Front Desk.jpg',
       '/Website Images 2026/Coworking/Outside area.jpg',
+      '/Website Images 2026/Coworking/The-sitting-room-1.jpg',
+      '/Website Images 2026/Coworking/Coworking and Pods.jpg',
     ],
   },
   workshop: {
     hero: '/Website Images 2026/The Workshop.jpg',
   },
   'sitting-room': {
-    hero: '/Website Images 2026/The Snug.jpg',
+    hero: '/Website Images 2026/Coworking/The-sitting-room-1.jpg',
     gallery: [
       '/Website Images 2026/Meeting Rooms/The Sitting Room.jpg',
+      '/Website Images 2026/Coworking/Pantry and coworking.jpg',
+      '/Website Images 2026/Events/Events.jpg',
     ],
   },
   'clerks-office': {

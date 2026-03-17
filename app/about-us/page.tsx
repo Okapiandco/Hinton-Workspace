@@ -1,20 +1,22 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Image from 'next/image'
+import Link from 'next/link'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 import SchemaScript from '@/components/SchemaScript'
 import { organizationSchema, breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'About Hinton Workspace | Dorset Coworking & Community',
   description:
-    "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+    "Meet Alice & the team behind Hinton Workspace - rural, community-focused co-working blending heritage, support & collaboration.",
   alternates: {
     canonical: 'https://hintonworkspace.co.uk/about-us',
   },
   openGraph: {
     title: 'About Hinton Workspace | Dorset Coworking & Community',
     description:
-      "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+      "Meet Alice & the team behind Hinton Workspace - rural, community-focused co-working blending heritage, support & collaboration.",
     url: 'https://hintonworkspace.co.uk/about-us',
     type: 'website',
   },
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Hinton Workspace | Dorset Coworking & Community',
     description:
-      "Meet Alice & the team behind Hinton Workspace — rural, community-focused co-working blending heritage, support & collaboration.",
+      "Meet Alice & the team behind Hinton Workspace - rural, community-focused co-working blending heritage, support & collaboration.",
   },
 }
 
@@ -53,7 +55,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-3xl font-serif font-bold text-dark-green mb-6">Our Story</h2>
             <p className="font-sans text-gray-700 mb-4 leading-relaxed">
-              Hinton Workspace was created to offer a calmer, flexible way of working and connecting — one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
+              Hinton Workspace was created to offer a calmer, flexible way of working and connecting - one that reflects how people actually work today. People do their best work when they feel comfortable, supported, and free from unnecessary pressure.
             </p>
             <p className="font-sans text-gray-700 leading-relaxed">
               Located within the historic Hinton St Mary estate, our buildings are carefully adapted to create calm, practical workspaces while respecting the estate&apos;s character. Modern work sits comfortably alongside history here.
@@ -89,12 +91,12 @@ export default function AboutPage() {
       <Section bgColor="white">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-2xl md:text-3xl font-serif font-bold text-dark-green mb-6 italic leading-relaxed">
-            &ldquo;Hinton Workspace grew from a simple idea — that work
+            &ldquo;Hinton Workspace grew from a simple idea - that work
             doesn&apos;t have to feel rushed, noisy, or disconnected from real
             life. I wanted a space where people could focus properly, feel
             welcome, and leave the day with energy intact.&rdquo;
           </p>
-          <p className="text-lg font-sans text-gray-700">&mdash; Alice, Founder</p>
+          <p className="text-lg font-sans text-gray-700">- Alice, Founder</p>
         </div>
       </Section>
 
@@ -128,21 +130,91 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Since 2024 */}
+      {/* Plan Your Visit */}
       <Section bgColor="dark-green">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-4xl font-serif font-bold text-white mb-4">
-            Since 2024
-          </h2>
-          <p className="text-xl font-sans text-gray-200 mb-6">
-            Transforming how rural professionals work, without the distractions
-            of home or the city.
+        <ScrollReveal>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-serif font-bold text-white mb-4">Plan Your Visit</h2>
+          <p className="text-lg font-sans text-gray-200 max-w-2xl mx-auto">
+            Hinton Workspace is set within a peaceful rural estate in North Dorset, with free parking and easy access. Drop us a message to plan your visit.
           </p>
-          <p className="font-sans text-gray-300">
-            Hinton Workspace has grown from a simple idea into a thriving
-            community. We&apos;re proud to support freelancers, entrepreneurs,
-            charities, and small businesses across North Dorset.
-          </p>
+        </div>
+        </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div>
+            <div className="relative h-64 rounded-lg overflow-hidden mb-8">
+              <Image src="/Website Images 2026/About/Signage.jpg" alt="Hinton Workspace entrance" fill className="object-cover" />
+            </div>
+            <div className="space-y-6 text-white">
+              <div className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink flex-shrink-0 mt-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                <div>
+                  <p className="font-sans font-bold text-sm text-pink">Address</p>
+                  <p className="font-sans text-sm text-gray-200">Hinton Workspace, The Building Yard, Hinton St Mary, Sturminster Newton, DT10 1NA</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink flex-shrink-0 mt-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                <div>
+                  <p className="font-sans font-bold text-sm text-pink">Phone</p>
+                  <a href="tel:+441258472623" className="font-sans text-sm text-gray-200 hover:text-white transition-colors">01258 472623</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink flex-shrink-0 mt-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <div>
+                  <p className="font-sans font-bold text-sm text-pink">Email</p>
+                  <a href="mailto:reception@hintonworkspace.co.uk" className="font-sans text-sm text-gray-200 hover:text-white transition-colors">reception@hintonworkspace.co.uk</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-pink flex-shrink-0 mt-1">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <p className="font-sans font-bold text-sm text-pink">Hours</p>
+                  <p className="font-sans text-sm text-gray-200">9am to 5pm, Monday to Friday</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-8">
+            <h3 className="text-xl font-serif font-bold text-dark-green mb-6">Send us a message</h3>
+            <form className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">First Name</label>
+                  <input type="text" placeholder="John" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
+                </div>
+                <div>
+                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                  <input type="text" placeholder="Doe" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
+                </div>
+              </div>
+              <div>
+                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" placeholder="john@example.com" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
+              </div>
+              <div>
+                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Phone (optional)</label>
+                <input type="tel" placeholder="07123 456789" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
+              </div>
+              <div>
+                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea rows={4} placeholder="Tell us about your workspace needs..." className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green resize-y" />
+              </div>
+              <button type="submit" className="w-full bg-dark-green text-white py-3 rounded font-sans font-semibold hover:bg-[#0F2321] transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </Section>
     </>

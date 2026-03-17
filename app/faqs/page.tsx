@@ -40,7 +40,7 @@ const faqs = [
   {
     question: 'Who is Hinton Workspace for?',
     answer:
-      "We're designed for anyone who works — remote workers, freelancers, founders, small business teams, charities, and individuals looking for an alternative to home working or expensive city offices.",
+      "We're designed for anyone who works - remote workers, freelancers, founders, small business teams, charities, and individuals looking for an alternative to home working or expensive city offices.",
   },
   {
     question: "What's included with coworking desks?",
@@ -70,7 +70,7 @@ const faqs = [
   {
     question: 'Can I upgrade or downgrade my membership?',
     answer:
-      "Yes, you can change your plan at any time. We'll prorate your costs based on your usage. There are no long-term contracts — switch whenever it suits you.",
+      "Yes, you can change your plan at any time. We'll prorate your costs based on your usage. There are no long-term contracts - switch whenever it suits you.",
   },
   {
     question: 'What about wellbeing and fitness?',
@@ -100,7 +100,7 @@ const faqs = [
   {
     question: "What's the cancellation policy?",
     answer:
-      "Day passes are pay-as-you-go with no commitment. Part-time and full-time memberships have no long-term contracts — cancel anytime with a month's notice.",
+      "Day passes are pay-as-you-go with no commitment. Part-time and full-time memberships have no long-term contracts - cancel anytime with a month's notice.",
   },
 ]
 

@@ -46,7 +46,7 @@ export default function WellbeingPage() {
       {/* Why Wellbeing Matters */}
       <TextImageSection
         title="Why Wellbeing Matters"
-        body="Work can be isolating and sedentary. We believe that movement, connection, and rest are essential to doing your best work. That's why Hinton Workspace has been designed with your whole health in mind — not just your productivity."
+        body="Work can be isolating and sedentary. We believe that movement, connection, and rest are essential to doing your best work. That's why Hinton Workspace has been designed with your whole health in mind - not just your productivity."
         image="/Website Images 2026/Coworking/Outside area.jpg"
         imageAlt="Outdoor space at Hinton Workspace"
       />
@@ -90,7 +90,7 @@ export default function WellbeingPage() {
             </h3>
             <p className="font-sans text-gray-700 mb-6">
               Gemma offers professional massage and spa treatments on site. Book
-              a session to rejuvenate during your workday — you deserve it.
+              a session to rejuvenate during your workday - you deserve it.
             </p>
             <a
               href="https://gemmahampton.com"
@@ -149,8 +149,8 @@ export default function WellbeingPage() {
           </h2>
           <p className="text-lg font-sans text-gray-700 leading-relaxed mb-6">
             We believe that how you work is as important as where you work.
-            Hinton Workspace is designed to support your whole self &mdash;
-            body, mind, and spirit &mdash; so you can do your best work and
+            Hinton Workspace is designed to support your whole self -
+            body, mind, and spirit - so you can do your best work and
             leave the day with energy intact.
           </p>
           <p className="text-lg font-sans text-gray-700 leading-relaxed">

@@ -51,7 +51,7 @@ const workspaces = [
     slug: 'sitting-room',
     description:
       'First-floor coworking with kitchen, cosy seating, and meeting rooms.',
-    image: '/Website Images 2026/The Snug.jpg',
+    image: '/Website Images 2026/Coworking/The-sitting-room-1.jpg',
   },
   {
     title: "The Clerk's Office",

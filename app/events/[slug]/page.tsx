@@ -30,9 +30,22 @@ async function getEvent(slug: string) {
       price,
       bookingUrl,
       status,
-      featuredImage,
+      featuredImage { asset-> { url } },
     }`,
     { slug }
+  )
+}
+
+async function getOtherEvents(currentSlug: string) {
+  return await client.fetch(
+    groq`*[_type == "event" && slug.current != $currentSlug] | order(startDate asc) {
+      _id,
+      title,
+      slug,
+      startDate,
+      featuredImage { asset-> { url } },
+    }`,
+    { currentSlug }
   )
 }
 
@@ -83,7 +96,7 @@ export async function generateMetadata({
 
 export default async function EventPage({ params }: EventPageProps) {
   const { slug } = await params
-  const event = await getEvent(slug)
+  const [event, otherEvents] = await Promise.all([getEvent(slug), getOtherEvents(slug)])
 
   if (!event) {
     notFound()
@@ -92,9 +105,7 @@ export default async function EventPage({ params }: EventPageProps) {
   const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
   const baseUrl = 'https://hintonworkspace.co.uk'
   const descriptionText = event.description?.[0]?.children?.[0]?.text || ''
-  const imageSrc = event.featuredImage
-    ? urlForImage(event.featuredImage)?.width(800).height(450).url()
-    : null
+  const imageSrc = event.featuredImage?.asset?.url || null
   const bookingHref = event.bookingUrl || spacebringUrl
 
   return (
@@ -133,12 +144,12 @@ export default async function EventPage({ params }: EventPageProps) {
 
           {/* Event Image */}
           {imageSrc && (
-            <div className="relative aspect-video rounded-lg overflow-hidden mb-8">
+            <div className="relative aspect-video rounded-lg overflow-hidden mb-8 bg-cream">
               <Image
                 src={imageSrc}
                 alt={event.title}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
             </div>
@@ -210,6 +221,43 @@ export default async function EventPage({ params }: EventPageProps) {
           </div>
         </div>
       </Section>
+
+      {/* Other Events */}
+      {otherEvents.length > 0 && (
+        <Section bgColor="white">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-serif font-bold text-dark-green mb-8">More Events</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherEvents.map((e: any) => (
+                <Link key={e._id} href={`/events/${e.slug.current}`} className="group">
+                  <div className="bg-cream border border-light-pink rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="relative aspect-video bg-cream">
+                      {e.featuredImage?.asset?.url ? (
+                        <Image
+                          src={e.featuredImage.asset.url}
+                          alt={e.title}
+                          fill
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-10 h-10 text-gray-300">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-5">
+                      <p className="text-xs font-sans font-semibold text-pink mb-1">{formatDate(e.startDate)}</p>
+                      <h3 className="font-serif font-bold text-dark-green group-hover:text-pink transition-colors">{e.title}</h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Section>
+      )}
     </>
   )
 }
