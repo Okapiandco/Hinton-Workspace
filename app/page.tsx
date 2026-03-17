@@ -189,7 +189,7 @@ export default function HomePage() {
             { src: '/Website Images 2026/Coworking/Fireplace.jpg', alt: 'Coworking by the fireplace' },
             { src: '/Website Images 2026/About/Signage.jpg', alt: 'Hinton Workspace signage' },
             { src: '/Website Images 2026/Coworking/Front Desk.jpg', alt: 'Front desk area' },
-            { src: '/Website Images 2026/Coworking/Outside area.jpg', alt: 'Outdoor seating area' },
+            { src: '/Website Images 2026/Events/Event Panel.jpg', alt: 'Event panel at Hinton Workspace' },
           ]}
         />
         </ScrollReveal>
