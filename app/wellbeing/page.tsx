@@ -3,6 +3,7 @@ import Section from '@/components/ui/Section'
 import FeatureCardsSection from '@/components/sections/FeatureCardsSection'
 import TextImageSection from '@/components/sections/TextImageSection'
 import Button from '@/components/ui/Button'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Wellbeing | Hinton Workspace Dorset',
@@ -64,42 +65,52 @@ export default function WellbeingPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* PT Gym */}
-          <div className="bg-white text-dark-green rounded-lg p-8 shadow-lg">
-            <h3 className="text-2xl font-serif font-bold mb-4">
-              Personal Training & Gym
-            </h3>
-            <p className="font-sans text-gray-700 mb-6">
-              C Results operates our on-site PT gym facility. Book personal
-              training sessions or use the gym facilities to keep active during
-              your working day.
-            </p>
-            <a
-              href="https://cresultspt.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <Button variant="primary">Book PT Session</Button>
-            </a>
+          <div className="bg-white text-dark-green rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-56">
+              <Image src="/Spa and Massage/C Results.jpg" alt="Personal Training Gym at Hinton Workspace" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl font-serif font-bold mb-4">
+                Personal Training & Gym
+              </h3>
+              <p className="font-sans text-gray-700 mb-6">
+                C Results operates our on-site PT gym facility. Book personal
+                training sessions or use the gym facilities to keep active during
+                your working day.
+              </p>
+              <a
+                href="https://cresultspt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button variant="primary">Book PT Session</Button>
+              </a>
+            </div>
           </div>
 
           {/* Spa */}
-          <div className="bg-white text-dark-green rounded-lg p-8 shadow-lg">
-            <h3 className="text-2xl font-serif font-bold mb-4">
-              Spa & Massage
-            </h3>
-            <p className="font-sans text-gray-700 mb-6">
-              Gemma offers professional massage and spa treatments on site. Book
-              a session to rejuvenate during your workday - you deserve it.
-            </p>
-            <a
-              href="https://gemmahampton.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <Button variant="primary">Book Massage</Button>
-            </a>
+          <div className="bg-white text-dark-green rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-56">
+              <Image src="/Spa and Massage/Spa.jpg" alt="Spa and Massage Treatments at Hinton Workspace" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-2xl font-serif font-bold mb-4">
+                Spa & Massage
+              </h3>
+              <p className="font-sans text-gray-700 mb-6">
+                Gemma offers professional massage and spa treatments on site. Book
+                a session to rejuvenate during your workday - you deserve it.
+              </p>
+              <a
+                href="https://gemmahampton.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button variant="primary">Book Massage</Button>
+              </a>
+            </div>
           </div>
         </div>
       </Section>

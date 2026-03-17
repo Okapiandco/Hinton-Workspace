@@ -80,7 +80,7 @@ export default function HomePage() {
             <p className="text-lg font-sans text-gray-600">Flexible space in North Dorset that fits with your work life.</p>
           </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
               title: 'Coworking Desks',
@@ -94,6 +94,12 @@ export default function HomePage() {
               image: '/Website Images 2026/Meeting Rooms/Meeting room.jpg',
               href: '/workspace/meeting-rooms',
             },
+            {
+              title: 'Events & Workshops',
+              description: 'Hinton Workspace hosts talks, workshops, and gatherings throughout the year. You can also hire our spaces for your own events, from business workshops to wellbeing sessions, for up to 100 guests.',
+              image: '/Website Images 2026/Events/Workshop.jpg',
+              href: '/events',
+            },
           ].map((workspace, idx) => (
             <ScrollReveal key={workspace.title} delay={idx * 150}>
               <div className="relative h-72 rounded-lg overflow-hidden mb-4">
@@ -106,22 +112,6 @@ export default function HomePage() {
               </Link>
             </ScrollReveal>
           ))}
-        </div>
-        <div className="max-w-5xl mx-auto mt-8">
-          <ScrollReveal>
-            <div className="md:w-1/2">
-              <div className="relative h-72 rounded-lg overflow-hidden mb-4">
-                <Image src="/Website Images 2026/Events/Workshop.jpg" alt="Events & Workshops" fill className="object-cover" />
-              </div>
-              <h3 className="text-2xl font-serif font-bold text-dark-green mb-2">Events & Workshops</h3>
-              <p className="font-sans text-gray-600 mb-3 leading-relaxed">
-                Hinton Workspace hosts talks, workshops, and gatherings throughout the year. You can also hire our spaces for your own events, from business workshops to wellbeing sessions, for up to 100 guests.
-              </p>
-              <Link href="/events" className="font-sans font-semibold text-dark-green hover:text-pink transition-colors">
-                Learn More &rarr;
-              </Link>
-            </div>
-          </ScrollReveal>
         </div>
       </Section>
 
@@ -248,27 +238,37 @@ export default function HomePage() {
         </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <ScrollReveal>
-          <div className="bg-cream border border-light-pink rounded-lg p-8">
-            <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Personal Training Gym</h3>
-            <p className="font-sans text-pink text-sm mb-4">with Cam from C Results</p>
-            <p className="font-sans text-gray-600 mb-6 leading-relaxed">
-              Onsite PT gym offering one-to-one and small group sessions in a fully equipped private space. Sessions can fit around your desk time.
-            </p>
-            <a href="https://www.cresults.co.uk" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="sm">Book with Cam</Button>
-            </a>
+          <div className="bg-cream border border-light-pink rounded-lg overflow-hidden">
+            <div className="relative h-48">
+              <Image src="/Spa and Massage/C Results.jpg" alt="Personal Training Gym at Hinton Workspace" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Personal Training Gym</h3>
+              <p className="font-sans text-pink text-sm mb-4">with Cam from C Results</p>
+              <p className="font-sans text-gray-600 mb-6 leading-relaxed">
+                Onsite PT gym offering one-to-one and small group sessions in a fully equipped private space. Sessions can fit around your desk time.
+              </p>
+              <a href="https://www.cresults.co.uk" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" size="sm">Book with Cam</Button>
+              </a>
+            </div>
           </div>
           </ScrollReveal>
           <ScrollReveal delay={150}>
-          <div className="bg-cream border border-light-pink rounded-lg p-8">
-            <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Spa Treatments</h3>
-            <p className="font-sans text-pink text-sm mb-4">with Gemma</p>
-            <p className="font-sans text-gray-600 mb-6 leading-relaxed">
-              Relax and reset with facials, massages, waxing, and more. All in a quiet, private space, perfectly integrated into your working day.
-            </p>
-            <a href="https://www.gemmahampton.co.uk" target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" size="sm">Book with Gemma</Button>
-            </a>
+          <div className="bg-cream border border-light-pink rounded-lg overflow-hidden">
+            <div className="relative h-48">
+              <Image src="/Spa and Massage/Spa.jpg" alt="Spa Treatments at Hinton Workspace" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-xl font-serif font-bold text-dark-green mb-1">Spa Treatments</h3>
+              <p className="font-sans text-pink text-sm mb-4">with Gemma</p>
+              <p className="font-sans text-gray-600 mb-6 leading-relaxed">
+                Relax and reset with facials, massages, waxing, and more. All in a quiet, private space, perfectly integrated into your working day.
+              </p>
+              <a href="https://www.gemmahampton.co.uk" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" size="sm">Book with Gemma</Button>
+              </a>
+            </div>
           </div>
           </ScrollReveal>
         </div>

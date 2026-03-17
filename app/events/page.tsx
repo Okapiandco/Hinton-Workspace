@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 60
+
 async function getEvents() {
   return await client.fetch(
     groq`*[_type == "event"] | order(startDate asc) {
@@ -46,7 +48,9 @@ async function getEvents() {
       location,
       status,
       featuredImage { asset-> { url } },
-    }`
+    }`,
+    {},
+    { next: { revalidate: 60 } }
   )
 }
 
