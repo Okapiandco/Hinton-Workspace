@@ -63,6 +63,7 @@ export const event = defineType({
       name: 'status',
       title: 'Status',
       type: 'string',
+      initialValue: 'published',
       options: {
         list: [
           {title: 'Draft', value: 'draft'},

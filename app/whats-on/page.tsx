@@ -48,6 +48,7 @@ async function getEvents() {
       price,
       bookingUrl,
       status,
+      featuredImage { asset-> { url } },
     }`
   )
 }
@@ -83,7 +84,7 @@ export default async function WhatsOnPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {futureEvents.map((event: any) => {
               const slug = event.slug?.current || ''
-              const imageSrc = eventImages[slug]
+              const imageSrc = eventImages[slug] || event.featuredImage?.asset?.url
               const description = event.description?.[0]?.children?.[0]?.text || ''
 
               return (
