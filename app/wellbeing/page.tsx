@@ -79,7 +79,7 @@ export default function WellbeingPage() {
                 your working day.
               </p>
               <a
-                href="https://cresultspt.com"
+                href="https://www.cresults.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
@@ -103,7 +103,7 @@ export default function WellbeingPage() {
                 a session to rejuvenate during your workday - you deserve it.
               </p>
               <a
-                href="https://gemmahampton.com"
+                href="https://www.facebook.com/people/Gemma-Hampton-Beauty-and-Wellbeing/61557796916611/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"

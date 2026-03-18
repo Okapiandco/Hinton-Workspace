@@ -109,7 +109,10 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
     notFound()
   }
 
-  const spacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
+  const defaultSpacebringUrl = `${process.env.NEXT_PUBLIC_SPACEBRING_BASE_URL}?organizationId=${process.env.NEXT_PUBLIC_SPACEBRING_ORG_ID}`
+  const spacebringUrl = slug === 'meeting-rooms'
+    ? 'https://hintonworkspace.spacebring.com/suite/organizations/8245e082-00fe-4287-b0f3-28767d6bbb50/rooms'
+    : defaultSpacebringUrl
   const images = workspaceImages[slug]
 
   return (

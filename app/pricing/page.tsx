@@ -34,6 +34,7 @@ const plans = [
     price: '£20',
     period: '',
     description: 'Perfect for occasional visits.',
+    href: 'https://hintonworkspace.spacebring.com/suite/organizations/8245e082-00fe-4287-b0f3-28767d6bbb50/events/27733e57-fec0-4abd-8ae5-92c671cf5cea',
     features: [
       'Tea & coffee',
       'Free parking',
@@ -183,7 +184,7 @@ export default function PricingPage() {
                 ))}
               </ul>
               <a
-                href={spacebringUrl}
+                href={plan.href || spacebringUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

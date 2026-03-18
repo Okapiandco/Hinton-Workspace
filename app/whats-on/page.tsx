@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 const eventImages: Record<string, string> = {
   'claude-ai-course-for-smes': '/images/events/Claude-for-SMEs.png',
   'sturminster-newton-business-awards': '/images/events/Sturminster awards.png',
+  'hustle-hangout-at-hinton': '/images/events/Hustle Hangout.png',
 }
 
 async function getEvents() {
