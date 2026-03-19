@@ -16,14 +16,14 @@ export default function Button({
   const baseStyles = 'font-sans font-semibold rounded transition-colors'
 
   const variants = {
-    primary: 'bg-dark-green text-white hover:bg-[#0F2321]',
-    secondary: 'bg-pink text-white hover:bg-[#C49A85]',
+    primary: 'bg-dark-green text-white hover:bg-pink hover:text-dark-green',
+    secondary: 'bg-pink text-dark-green hover:bg-dark-green hover:text-white',
     outline:
       'border-2 border-dark-green text-dark-green hover:bg-dark-green hover:text-white',
     'outline-light':
       'border-2 border-white text-white hover:bg-white hover:text-dark-green',
     'book-tour':
-      'bg-pink text-dark-green hover:bg-light-pink shadow-lg',
+      'bg-pink text-dark-green hover:bg-dark-green hover:text-white shadow-lg',
   }
 
   const sizes = {
