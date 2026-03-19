@@ -145,7 +145,7 @@ export default function Header() {
               href={spacebringUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-block bg-dark-green text-white px-6 py-2 rounded font-sans font-semibold hover:bg-[#0F2321] transition-colors text-sm float-in hover-float shadow-md"
+              className="hidden sm:inline-block bg-pink text-dark-green px-6 py-2 rounded font-sans font-semibold hover:bg-light-pink transition-colors text-sm float-in hover-float shadow-md"
             >
               Book a Tour
             </a>

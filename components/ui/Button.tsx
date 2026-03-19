@@ -23,7 +23,7 @@ export default function Button({
     'outline-light':
       'border-2 border-white text-white hover:bg-white hover:text-dark-green',
     'book-tour':
-      'bg-dark-green text-white hover:bg-[#0F2321] shadow-lg',
+      'bg-pink text-dark-green hover:bg-light-pink shadow-lg',
   }
 
   const sizes = {
