@@ -23,7 +23,7 @@ export default function HeroSection({
   ctas,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[100svh] md:h-[650px] flex items-end overflow-hidden">
+    <section className="relative h-[75svh] md:h-[650px] flex items-end overflow-hidden">
       {backgroundVideo && (
         <video
           autoPlay
@@ -69,7 +69,7 @@ export default function HeroSection({
                     ? 'noopener noreferrer'
                     : undefined
                 }
-                className={idx === 0 ? 'float-in' : 'float-in-delay hover-float'}
+                className={idx === 0 ? 'float-in' : 'float-in-delay'}
               >
                 <Button variant={cta.variant || 'primary'} size="lg">
                   {cta.text}
