@@ -92,6 +92,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB" className={`${baskerville.variable} ${dmSans.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HR2N35K0B" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-7HR2N35K0B');
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans bg-cream text-gray-900">
         <SiteLayout>{children}</SiteLayout>
         <CookieConsent />
