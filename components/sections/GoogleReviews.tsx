@@ -102,12 +102,31 @@ export default function GoogleReviews() {
     setCurrentIndex((i) => Math.min(maxIndex, i + 1))
   }, [maxIndex])
 
-  // Auto-advance every 5 seconds
+  // Auto-advance every 5 seconds, pausing when tab is hidden
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((i) => (i >= maxIndex ? 0 : i + 1))
-    }, 5000)
-    return () => clearInterval(timer)
+    let timer: ReturnType<typeof setInterval> | null = null
+
+    function start() {
+      if (timer) return
+      timer = setInterval(() => {
+        setCurrentIndex((i) => (i >= maxIndex ? 0 : i + 1))
+      }, 5000)
+    }
+
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null }
+    }
+
+    function onVisibilityChange() {
+      if (document.hidden) stop(); else start()
+    }
+
+    start()
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    return () => {
+      stop()
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+    }
   }, [maxIndex])
 
   const totalDots = maxIndex + 1

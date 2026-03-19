@@ -23,7 +23,7 @@ export default function HeroSection({
   ctas,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[75svh] md:h-[650px] flex items-end overflow-hidden">
+    <section className="relative min-h-[85svh] md:h-[650px] flex items-end overflow-hidden">
       {backgroundVideo && (
         <video
           autoPlay

@@ -19,12 +19,14 @@ export const metadata: Metadata = {
       'Explore the Hinton Workspace blog: inspiration, productivity tips, community news, and workplace stories from rural Dorset.',
     url: 'https://hintonworkspace.co.uk/news',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace - News & Insights' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'News & Insights | Hinton Workspace',
     description:
       'Explore the Hinton Workspace blog: inspiration, productivity tips, community news, and workplace stories from rural Dorset.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

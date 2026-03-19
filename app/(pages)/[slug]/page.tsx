@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const title = page.seo?.metaTitle || page.title
-  const description = page.seo?.metaDescription || ''
+  const description = page.seo?.metaDescription || `${page.title} at Hinton Workspace, flexible coworking in North Dorset.`
   const pageUrl = `https://hintonworkspace.co.uk/${slug}`
 
   return {

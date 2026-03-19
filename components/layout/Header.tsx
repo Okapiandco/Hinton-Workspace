@@ -69,9 +69,9 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 header-animate">
-      {/* Announcement Bar */}
-      <div className="bg-dark-green text-white">
+    <header className="sticky top-0 z-50">
+      {/* Announcement Bar — hidden on mobile */}
+      <div className="hidden sm:block bg-dark-green text-white">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between text-sm font-sans">
           <a
             href="mailto:reception@hintonworkspace.co.uk"
@@ -96,7 +96,7 @@ export default function Header() {
 
       {/* Main Header */}
       <div className="bg-cream border-b border-light-pink">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 py-2 sm:px-4 sm:py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -105,6 +105,7 @@ export default function Header() {
               width={160}
               height={50}
               priority
+              className="w-[120px] h-auto sm:w-[160px]"
             />
             <span className="sr-only">Hinton Workspace</span>
           </Link>

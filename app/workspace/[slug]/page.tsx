@@ -76,7 +76,7 @@ export async function generateMetadata({
   }
 
   const title = page.seo?.metaTitle || `${page.title} | Hinton Workspace`
-  const description = page.seo?.metaDescription || ''
+  const description = page.seo?.metaDescription || `${page.title} at Hinton Workspace — flexible coworking and meeting spaces in North Dorset.`
   const heroImage = workspaceImages[slug]?.hero
   const pageUrl = `https://hintonworkspace.co.uk/workspace/${slug}`
 

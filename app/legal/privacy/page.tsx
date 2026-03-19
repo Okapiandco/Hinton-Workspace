@@ -3,7 +3,21 @@ import Section from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Hinton Workspace',
-  description: 'Privacy policy for Hinton Workspace.',
+  description: 'Read the Hinton Workspace privacy policy. Learn how we collect, use, and protect your personal data when you use our coworking space and website.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/legal/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy | Hinton Workspace',
+    description: 'Read the Hinton Workspace privacy policy. Learn how we collect, use, and protect your personal data.',
+    url: 'https://hintonworkspace.co.uk/legal/privacy',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy | Hinton Workspace',
+    description: 'Read the Hinton Workspace privacy policy. Learn how we collect, use, and protect your personal data.',
+  },
 }
 
 export default function PrivacyPage() {

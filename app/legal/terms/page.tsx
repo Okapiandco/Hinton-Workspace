@@ -3,7 +3,21 @@ import Section from '@/components/ui/Section'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Hinton Workspace',
-  description: 'Terms and conditions for Hinton Workspace.',
+  description: 'Terms and conditions for using Hinton Workspace coworking space, meeting rooms, and event facilities in North Dorset.',
+  alternates: {
+    canonical: 'https://hintonworkspace.co.uk/legal/terms',
+  },
+  openGraph: {
+    title: 'Terms & Conditions | Hinton Workspace',
+    description: 'Terms and conditions for using Hinton Workspace coworking space, meeting rooms, and event facilities in North Dorset.',
+    url: 'https://hintonworkspace.co.uk/legal/terms',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms & Conditions | Hinton Workspace',
+    description: 'Terms and conditions for using Hinton Workspace coworking space, meeting rooms, and event facilities in North Dorset.',
+  },
 }
 
 export default function TermsPage() {
