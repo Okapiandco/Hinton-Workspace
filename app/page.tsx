@@ -64,13 +64,22 @@ export default function HomePage() {
       <HeroSection
         title={<>Flexible workspace in North Dorset where <em>ideas come to life.</em></>}
         subtitle="CO-WORKING &bull; MEETING ROOMS &bull; EVENTS &bull; WELLBEING"
-        body="Looking for a workspace that sparks focus, creativity, and connection? Hinton Workspace is more than desks and meeting rooms. It's a vibrant community in the heart of the Dorset countryside."
         backgroundVideo="/video/HInton-Workspace-Video.mp4"
         ctas={[
           { text: 'Book a Desk \u2192', href: spacebringUrl, variant: 'primary' },
           { text: 'Book a Tour', href: spacebringUrl, variant: 'book-tour' as const },
         ]}
       />
+
+      {/* Intro */}
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-green mb-4">The Hinton Workspace</h2>
+          <p className="text-lg font-sans text-gray-600 leading-relaxed">
+            Looking for a workspace that sparks focus, creativity, and connection? Hinton Workspace is more than desks and meeting rooms. It&apos;s a vibrant community in the heart of the Dorset countryside.
+          </p>
+        </div>
+      </Section>
 
       {/* Our Workspaces */}
       <Section>
