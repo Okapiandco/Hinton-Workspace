@@ -23,7 +23,7 @@ export default function HeroSection({
   ctas,
 }: HeroSectionProps) {
   return (
-    <section className="relative min-h-[85svh] md:h-[650px] flex items-end overflow-hidden">
+    <section className="relative min-h-[70svh] md:h-[650px] flex items-end overflow-hidden">
       {backgroundVideo && (
         <video
           autoPlay
@@ -45,11 +45,11 @@ export default function HeroSection({
         />
       )}
       <div className="absolute inset-0 bg-dark-green/50" />
-      <div className="relative z-10 text-left max-w-7xl w-full mx-auto px-4 pb-16">
-        <p className="hero-animate text-sm font-sans text-pink mb-4 tracking-[0.2em] uppercase">
+      <div className="relative z-10 text-left max-w-7xl w-full mx-auto px-4 pb-8 md:pb-16">
+        <p className="hero-animate text-xs md:text-sm font-sans text-pink mb-3 md:mb-4 tracking-[0.2em] uppercase">
           {subtitle}
         </p>
-        <h1 className="hero-animate-delay-1 text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight max-w-2xl">
+        <h1 className="hero-animate-delay-1 text-3xl md:text-6xl font-serif font-bold text-white mb-4 md:mb-6 leading-tight max-w-2xl">
           {title}
         </h1>
         {body && (
