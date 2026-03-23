@@ -76,19 +76,13 @@ export default function HomePage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-green mb-4">The Hinton Workspace</h2>
           <p className="text-lg font-sans text-gray-600 leading-relaxed">
-            Looking for a workspace that sparks focus, creativity, and connection? Hinton Workspace is more than desks and meeting rooms. It&apos;s a vibrant community in the heart of the Dorset countryside.
+            Looking for a workspace that sparks focus, creativity, and connection? Hinton Workspace is more than desks and meeting rooms. It&apos;s a vibrant community in the heart of the Dorset countryside. Flexible space in North Dorset that fits with your work life.
           </p>
         </div>
       </Section>
 
       {/* Our Workspaces */}
       <Section>
-        <ScrollReveal>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-dark-green mb-4">Our Workspaces</h2>
-            <p className="text-lg font-sans text-gray-600">Flexible space in North Dorset that fits with your work life.</p>
-          </div>
-        </ScrollReveal>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
