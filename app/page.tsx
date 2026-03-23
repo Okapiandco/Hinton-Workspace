@@ -72,7 +72,7 @@ export default function HomePage() {
       />
 
       {/* Intro */}
-      <Section>
+      <Section className="!pb-0">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-dark-green mb-4">The Hinton Workspace</h2>
           <p className="text-lg font-sans text-gray-600 leading-relaxed">
