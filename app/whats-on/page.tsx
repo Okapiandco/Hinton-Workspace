@@ -29,12 +29,6 @@ export const metadata: Metadata = {
   },
 }
 
-const eventImages: Record<string, string> = {
-  'claude-ai-course-for-smes': '/images/events/Claude-for-SMEs.png',
-  'sturminster-newton-business-awards': '/images/events/Sturminster awards.png',
-  'hustle-hangout-at-hinton': '/images/events/Hustle Hangout.png',
-}
-
 async function getEvents() {
   return await client.fetch(
     groq`*[_type == "event" && status == "published"] | order(startDate asc) {
@@ -84,7 +78,7 @@ export default async function WhatsOnPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {futureEvents.map((event: any) => {
               const slug = event.slug?.current || ''
-              const imageSrc = eventImages[slug] || event.featuredImage?.asset?.url
+              const imageSrc = event.featuredImage?.asset?.url
               const description = event.description?.[0]?.children?.[0]?.text || ''
 
               return (
