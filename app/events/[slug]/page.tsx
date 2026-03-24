@@ -38,7 +38,7 @@ async function getEvent(slug: string) {
 
 async function getOtherEvents(currentSlug: string) {
   return await client.fetch(
-    groq`*[_type == "event" && slug.current != $currentSlug] | order(startDate asc) {
+    groq`*[_type == "event" && slug.current != $currentSlug && (endDate > now() || (!defined(endDate) && startDate > now()))] | order(startDate asc) {
       _id,
       title,
       slug,
