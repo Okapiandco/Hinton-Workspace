@@ -8,7 +8,7 @@ export default function StudioLayout({
   children: React.ReactNode
 }) {
   return (
-    <div style={{ height: '100vh' }}>
+    <div id="sanity-studio" style={{ height: '100vh' }}>
       {children}
     </div>
   )

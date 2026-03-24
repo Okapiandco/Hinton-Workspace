@@ -30,12 +30,13 @@
     cursor: pointer;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1:not(#sanity-studio *), h2:not(#sanity-studio *), h3:not(#sanity-studio *),
+  h4:not(#sanity-studio *), h5:not(#sanity-studio *), h6:not(#sanity-studio *) {
     font-family: var(--font-serif);
     color: #153734;
   }
 
-  body, p, span {
+  body:not(:has(#sanity-studio)), p:not(#sanity-studio *), span:not(#sanity-studio *) {
     font-family: var(--font-sans);
   }
 }
