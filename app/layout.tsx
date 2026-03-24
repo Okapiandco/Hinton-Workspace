@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
 import { Libre_Baskerville, DM_Sans } from 'next/font/google'
-import SiteLayout from '@/components/layout/RootLayout'
-import CookieConsent from '@/components/ui/CookieConsent'
-import './globals.css'
 
 const baskerville = Libre_Baskerville({
   subsets: ['latin'],
@@ -93,40 +90,8 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className={`${baskerville.variable} ${dmSans.variable}`}>
       <head />
-      <body className="font-sans bg-cream text-gray-900">
-        <SiteLayout>{children}</SiteLayout>
-        <CookieConsent />
-
-        {/* Keap Form Script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function (window, document) {
-                  var keapForms = window.keapForms || {
-                      SNIPPET_VERSION: '1.1.0',
-                      appId: 'btw525',
-                  };
-                  var script = document.createElement('script');
-                  script.type = 'text/javascript';
-                  script.crossOrigin = 'anonymous';
-                  script.defer = true;
-                  script.src = 'https://forms.keap.app/lib/public-form-embed.js?appId=btw525&version=1.1.0';
-                  script.onload = function () {
-                      var keapFormsAfterLoad = window.keapForms;
-                      if (!keapFormsAfterLoad.renderAllForms) {
-                          console.error('[Keap Forms] Error: could not load');
-                      } else if (!keapFormsAfterLoad.invoked) {
-                          keapFormsAfterLoad.invoked = true;
-                          keapFormsAfterLoad.renderAllForms();
-                      }
-                  };
-                  var firstScriptTag = document.getElementsByTagName('script')[0];
-                  firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
-                  window.keapForms = keapForms;
-              }(window, document));
-            `,
-          }}
-        />
+      <body>
+        {children}
       </body>
     </html>
   )
