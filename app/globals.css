@@ -30,13 +30,13 @@
     cursor: pointer;
   }
 
-  h1:not(#sanity-studio *), h2:not(#sanity-studio *), h3:not(#sanity-studio *),
-  h4:not(#sanity-studio *), h5:not(#sanity-studio *), h6:not(#sanity-studio *) {
+  h1:not(#sanity *), h2:not(#sanity *), h3:not(#sanity *),
+  h4:not(#sanity *), h5:not(#sanity *), h6:not(#sanity *) {
     font-family: var(--font-serif);
     color: #153734;
   }
 
-  body:not(:has(#sanity-studio)), p:not(#sanity-studio *), span:not(#sanity-studio *) {
+  p:not(#sanity *), span:not(#sanity *) {
     font-family: var(--font-sans);
   }
 }
@@ -147,6 +147,25 @@
 .scroll-reveal-right.scroll-visible {
   opacity: 1;
   transform: translateX(0);
+}
+
+/* Sanity Studio - undo Tailwind reset */
+#sanity button, #sanity [role="button"] {
+  all: revert;
+}
+#sanity select, #sanity input, #sanity textarea {
+  all: revert;
+}
+#sanity menu, #sanity ol, #sanity ul {
+  list-style: revert;
+  margin: revert;
+  padding: revert;
+}
+#sanity img, #sanity svg, #sanity video {
+  display: revert;
+}
+#sanity *, #sanity *::before, #sanity *::after {
+  border-style: revert;
 }
 
 /* Keap Form Styles */
