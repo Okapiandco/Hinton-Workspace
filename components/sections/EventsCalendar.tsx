@@ -26,7 +26,7 @@ export default function EventsCalendar({ events }: EventsCalendarProps) {
   return (
     <div className="space-y-4">
       {events.map((event) => (
-        <Link key={event._id} href={`/events/${event.slug.current}`}>
+        <Link key={event._id} href={`/events/${event.slug?.current || event._id}`}>
           <Card className="hover:shadow-lg cursor-pointer transition-shadow mb-4">
             <div className="flex flex-col sm:flex-row gap-6">
               {event.featuredImage?.asset?.url && (

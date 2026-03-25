@@ -48,8 +48,8 @@ export default function WellbeingPage() {
       <TextImageSection
         title="Why Wellbeing Matters"
         body="Work can be isolating and sedentary. We believe that movement, connection, and rest are essential to doing your best work. That's why Hinton Workspace has been designed with your whole health in mind - not just your productivity."
-        image="/Website Images 2026/Coworking/Outside area.jpg"
-        imageAlt="Outdoor space at Hinton Workspace"
+        image="/Website Images 2026/Wellbeing at hinton.jpg"
+        imageAlt="Wellbeing at Hinton Workspace"
       />
 
       {/* On-Site Services */}

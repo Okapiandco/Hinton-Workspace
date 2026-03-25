@@ -34,7 +34,7 @@ const plans = [
     price: '£20',
     period: '',
     description: 'Perfect for occasional visits.',
-    href: 'https://hintonworkspace.spacebring.com/suite/organizations/8245e082-00fe-4287-b0f3-28767d6bbb50/events/27733e57-fec0-4abd-8ae5-92c671cf5cea',
+    href: 'https://app.spacebring.com/hintonworkspace/locations/8245e082-00fe-4287-b0f3-28767d6bbb50/desks/c6c1f2e6-6645-43e3-acd6-e62cd179acf5',
     features: [
       'Tea & coffee',
       'Free parking',

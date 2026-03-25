@@ -40,6 +40,7 @@ const workspaces = [
 const navLinks = [
   { href: '/wellbeing', label: 'Wellbeing' },
   { href: '/whats-on', label: "What's On" },
+  { href: '/corporate-events', label: 'Corporate Events' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/about-us', label: 'About' },
   { href: '/contact', label: 'Visit' },
@@ -143,7 +144,7 @@ export default function Header() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-4">
             <a
-              href={spacebringUrl}
+              href="https://letsmeet.io/hintonworkspace/hinton-workspace-tour"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-block bg-dark-green text-white px-6 py-2 rounded font-sans font-semibold hover:bg-pink hover:text-dark-green transition-colors text-sm shadow-md"

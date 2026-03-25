@@ -67,7 +67,7 @@ export default function HomePage() {
         backgroundVideo="/video/HInton-Workspace-Video.mp4"
         ctas={[
           { text: 'Book a Desk \u2192', href: spacebringUrl, variant: 'primary' },
-          { text: 'Book a Tour', href: spacebringUrl, variant: 'book-tour' as const },
+          { text: 'Book a Tour', href: 'https://letsmeet.io/hintonworkspace/hinton-workspace-tour', variant: 'book-tour' as const },
         ]}
       />
 
@@ -289,6 +289,7 @@ export default function HomePage() {
           {[
             {
               title: 'Day Pass', subtitle: 'Perfect for occasional visits.', price: '£20', per: '',
+              href: 'https://app.spacebring.com/hintonworkspace/locations/8245e082-00fe-4287-b0f3-28767d6bbb50/desks/c6c1f2e6-6645-43e3-acd6-e62cd179acf5',
               features: ['Tea & coffee', 'Free parking', 'Fast wifi', 'Quiet pods'],
             },
             {
@@ -325,7 +326,7 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <a href={spacebringUrl} target="_blank" rel="noopener noreferrer" className="block">
+              <a href={plan.href || spacebringUrl} target="_blank" rel="noopener noreferrer" className="block">
                 <button className="w-full border border-white/30 text-white py-3 rounded font-sans font-semibold hover:bg-white hover:text-dark-green transition-colors text-sm">
                   Get Started
                 </button>
