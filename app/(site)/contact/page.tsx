@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
+import KeapForm from '@/components/KeapForm'
 
 export const metadata: Metadata = {
   title: 'Contact Hinton Workspace | Get in Touch',
@@ -125,7 +126,7 @@ export default function ContactPage() {
 
             <div className="mt-8">
               <a
-                href={spacebringUrl}
+                href="https://letsmeet.io/hintonworkspace/hinton-workspace-tour"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -136,38 +137,12 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right: Contact Form */}
+          {/* Right: Keap Contact Form */}
           <div>
             <h2 className="text-2xl font-serif font-bold text-dark-green mb-8">
               Send us a message
             </h2>
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">First Name</label>
-                  <input type="text" placeholder="John" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-                </div>
-                <div>
-                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                  <input type="text" placeholder="Doe" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-                </div>
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" placeholder="john@example.com" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Phone (optional)</label>
-                <input type="tel" placeholder="07123 456789" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea rows={4} placeholder="Tell us about your workspace needs..." className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green resize-y" />
-              </div>
-              <button type="submit" className="w-full bg-dark-green text-white py-3 rounded font-sans font-semibold hover:bg-[#0F2321] transition-colors">
-                Send Message
-              </button>
-            </form>
+            <KeapForm />
           </div>
         </div>
       </Section>
