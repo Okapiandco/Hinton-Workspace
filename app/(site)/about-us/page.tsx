@@ -186,34 +186,20 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="bg-white rounded-lg p-8">
-            <h3 className="text-xl font-serif font-bold text-dark-green mb-6">Send us a message</h3>
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">First Name</label>
-                  <input type="text" placeholder="John" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-                </div>
-                <div>
-                  <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                  <input type="text" placeholder="Doe" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-                </div>
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input type="email" placeholder="john@example.com" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Phone (optional)</label>
-                <input type="tel" placeholder="07123 456789" className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green" />
-              </div>
-              <div>
-                <label className="block font-sans text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea rows={4} placeholder="Tell us about your workspace needs..." className="w-full border border-gray-300 rounded px-3 py-2 font-sans text-sm focus:outline-none focus:border-dark-green resize-y" />
-              </div>
-              <button type="submit" className="w-full bg-dark-green text-white py-3 rounded font-sans font-semibold hover:bg-[#0F2321] transition-colors">
-                Send Message
-              </button>
-            </form>
+            <h3 className="text-xl font-serif font-bold text-dark-green mb-6">Book a Tour</h3>
+            <iframe
+              src="https://letsmeet.io/hintonworkspace/hinton-workspace-tour"
+              style={{ border: 'none', minHeight: '700px', width: '1px', minWidth: '100%' }}
+              title="Book a tour at Hinton Workspace"
+              scrolling="no"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              width="100%"
+              height="100%"
+              referrerPolicy="unsafe-url"
+              allowFullScreen
+            />
           </div>
         </div>
       </Section>

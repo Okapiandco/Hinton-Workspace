@@ -7,14 +7,14 @@ import { priceSchema } from '@/lib/schema'
 export const metadata: Metadata = {
   title: 'Pricing – Membership Options at Hinton Workspace',
   description:
-    'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month. No long-term commitments.',
+    'Explore Hinton Workspace pricing: Day Pass £20, The Occasional £49/month, The Regular £99/month, The Resident £249/month. No long-term commitments.',
   alternates: {
     canonical: 'https://hintonworkspace.co.uk/pricing',
   },
   openGraph: {
     title: 'Pricing – Membership Options at Hinton Workspace',
     description:
-      'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month.',
+      'Explore Hinton Workspace pricing: Day Pass £20, The Occasional £49/month, The Regular £99/month, The Resident £249/month.',
     url: 'https://hintonworkspace.co.uk/pricing',
     type: 'website',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pricing – Membership Options at Hinton Workspace',
     description:
-      'Explore Hinton Workspace pricing: Day Pass £20, 4 Day Pass £49/month, 8 Day Pass £99/month, Unlimited £249/month.',
+      'Explore Hinton Workspace pricing: Day Pass £20, The Occasional £49/month, The Regular £99/month, The Resident £249/month.',
   },
 }
 
@@ -43,7 +43,7 @@ const plans = [
     ],
   },
   {
-    title: '4 Day Pass',
+    title: 'The Occasional',
     price: '£49',
     period: '/ month',
     description: 'Use any 4 days in a month (available Monday to Friday)',
@@ -55,7 +55,7 @@ const plans = [
     ],
   },
   {
-    title: '8 Day Pass',
+    title: 'The Regular',
     price: '£99',
     period: '/ month',
     description: 'Use any 8 days in a month (available Monday to Friday)',
@@ -69,7 +69,7 @@ const plans = [
     ],
   },
   {
-    title: 'Unlimited Access',
+    title: 'The Resident',
     price: '£249',
     period: '/ month',
     description: 'For dedicated professionals',

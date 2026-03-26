@@ -35,28 +35,28 @@ const venues = [
     description:
       'Bright, calm and beautifully simple, Hinton Workspace is designed for clear thinking and purposeful sessions. The countryside surrounds you, helping teams switch into a better gear from the moment they arrive.',
     tagline: 'A modern workspace, rooted in rural quiet.',
-    image: '/corporate/workspace.jpg',
+    image: '/images/Corporate%20Events/DSC_5286.jpg',
   },
   {
     title: 'Wood Lane Yard',
     description:
       'Five-time Olympian and former World Number One William Fox-Pitt has built a career on world-class teamwork. William now leads workshops that translate the principles of elite sport directly into business, offering a rare, behind-the-scenes look at what high performance really takes.',
     tagline: 'Teamwork, trust and instinct. The Fox-Pitt way.',
-    image: '/corporate/wood-lane-yard.jpg',
+    image: '/images/Corporate%20Events/William%20Fox%20-%20Pitt%20(GBR).jpg',
   },
   {
     title: 'Larmer Tree Gardens',
     description:
       "Created in the 1880s for creativity and pleasure, Larmer Tree feels other-worldly. Ornate buildings, sunlit lawns, woodland, peacocks and open-air beauty. It's a setting that elevates any gathering, from large lunches and team building events to team dinners in the light-filled Pavilion.",
     tagline: 'Historic gardens with modern magic.',
-    image: '/corporate/larmer-tree.jpg',
+    image: '/images/Corporate%20Events/Larmer%20Tree%20Queen-234.jpg',
   },
   {
     title: 'Rushmore Golf',
     description:
       'Set within one of the most stunning landscapes of Southern England, high on the chalk of the Cranborne Chase in Wiltshire, Rushmore Golf Club provides year-round golf on free-draining turf. A thoroughly modern 18-hole course set in beautiful, ancient parkland.',
     tagline: 'One of the best golf courses in the region.',
-    image: '/corporate/rushmore-golf.jpg',
+    image: '/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.39.07%20(1).png',
   },
 ]
 
@@ -96,9 +96,9 @@ export default function CorporateEventsPage() {
         title={<>Corporate Away Days &amp; Retreats in <em>Rural Dorset</em></>}
         subtitle="RIVERS ESTATE"
         body="Across two private estates, we bring together modern workspaces, wild landscapes, incredible dining and world-class equestrian facilities."
-        backgroundImage="/corporate/hero.jpg"
+        backgroundImage="/images/Corporate%20Events/Ben%20Goode%20drone%20footage%20HSME%20010624.jpg"
         ctas={[
-          { text: 'Enquire Now', href: '/contact', variant: 'primary' },
+          { text: 'Enquire Now', href: 'mailto:marketing@hintonworkspace.co.uk', variant: 'primary' },
         ]}
       />
 
@@ -121,8 +121,8 @@ export default function CorporateEventsPage() {
           <ScrollReveal delay={200}>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg bg-gray-200">
               <Image
-                src="/corporate/what-we-offer.jpg"
-                alt="Hinton Workspace lounge and workspace area"
+                src="/images/Corporate%20Events/DSC_5679%20(1).jpg"
+                alt="Panel discussion event at Hinton Workspace"
                 fill
                 className="object-cover"
               />
@@ -149,8 +149,8 @@ export default function CorporateEventsPage() {
       <TextImageSection
         title="Why It Matters"
         body={"Away from emails and everyday noise, teams reset faster, think clearer and connect better.\n\nNature, movement, great food and open space create the headspace people need to plan, reflect and come back sharper."}
-        image="/corporate/why-it-matters.jpg"
-        imageAlt="Team connecting at Hinton Workspace"
+        image="/images/Corporate%20Events/DSC_4920.jpg"
+        imageAlt="People laughing and connecting at Hinton Workspace"
         bgColor="white"
       />
 
@@ -173,6 +173,30 @@ export default function CorporateEventsPage() {
             <p className="text-lg font-sans text-gray-600 max-w-2xl mx-auto">
               Four distinctive venues, each offering something different for your team.
             </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Photo Grid */}
+        <ScrollReveal>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.28.12.png" alt="Clay pigeon shooting on the estate" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Screenshot%202026-02-09%20at%2013.33.47.png" alt="Bird sculpture at Larmer Tree Gardens" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Larmer%20Tree%20Queen%20LOW%20RES-08.jpg" alt="Event at Larmer Tree Gardens" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Sadie-and-Joel_57%20(1).jpg" alt="King John House and gardens" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/bg-hsm-106.jpg" alt="Dining at the White Horse" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Dorset%20commercial%20photographer-118.jpg" alt="The White Horse pub" fill className="object-cover" />
+            </div>
           </div>
         </ScrollReveal>
 
@@ -211,8 +235,8 @@ export default function CorporateEventsPage() {
       <TextImageSection
         title="Dining"
         body={"Choose from the White Horse, King John's House, the Tithe Barn or Larmer Tree Gardens. Wherever you choose, the food stays local, seasonal and generous.\n\nFrom intimate pub dinners for 20, to beautifully catered evenings at King John House, to large-scale feasts at The Tithe Barn or Larmer Tree for 100 and well beyond."}
-        image="/corporate/dining.jpg"
-        imageAlt="Dining at the White Horse"
+        image="/images/Corporate%20Events/Wild%20fork%20West%20(1).jpg"
+        imageAlt="Seasonal canapés and fine food at Rivers Estate"
         bgColor="white"
       />
 
@@ -236,11 +260,34 @@ export default function CorporateEventsPage() {
       <TextImageSection
         title="Stay With Us"
         body={"Stay in Hinton St Mary village cottages, just a stone's throw from Hinton Workspace, The Tithe Barn and Wood Lane Yard. For bigger groups, we partner with Plumber Manor near Hinton.\n\nWe also have estate bedrooms at King John House to sleep 13, or high-end glamping at Larmer Tree for a really different experience. Mornings feel softer here \u2014 birdsong, fresh air, and a pace that helps people return refreshed."}
-        image="/corporate/stay-with-us.jpg"
-        imageAlt="Countryside cottage accommodation"
+        image="/images/Corporate%20Events/Manor%20Stables%20(1).jpg"
+        imageAlt="Beautiful bedroom at Manor Stables accommodation"
         imagePosition="left"
         bgColor="white"
       />
+
+      {/* Stay With Us Photo Grid */}
+      <Section bgColor="white" className="!pt-0">
+        <ScrollReveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="relative aspect-square rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Tulips%20in%20The%20Lodge%20(1).png" alt="The Lodge dining room with tulips" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-square rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Dorset%20commercial%20photographer-65%20(1).jpg" alt="Cosy window seat in cottage accommodation" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-square rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/the%20gates%20(1).jpg" alt="Historic cottage at the estate gates" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-square rounded-lg overflow-hidden">
+              <Image src="/images/Corporate%20Events/Dorset%20commercial%20photographer-67%20(1).jpg" alt="Country wellies at the estate" fill className="object-cover" />
+            </div>
+          </div>
+          <p className="text-center text-sm font-sans text-pink font-semibold uppercase tracking-widest mt-8">
+            Make it a deeper reset.
+          </p>
+        </ScrollReveal>
+      </Section>
 
       {/* Packages */}
       <Section bgColor="dark-green">
@@ -318,8 +365,8 @@ export default function CorporateEventsPage() {
           <ScrollReveal delay={200}>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-lg bg-gray-200">
               <Image
-                src="/corporate/experience.jpg"
-                alt="Rivers Estate hospitality"
+                src="/images/Corporate%20Events/Ben%20Goode%20drone%20footage%20HSME%20010624.jpg"
+                alt="Aerial view of the Rivers Estate"
                 fill
                 className="object-cover"
               />
@@ -343,7 +390,7 @@ export default function CorporateEventsPage() {
               purpose. With the quiet confidence of the countryside behind it.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a href="/contact">
+              <a href="mailto:marketing@hintonworkspace.co.uk">
                 <Button variant="secondary" size="lg">Enquire Now</Button>
               </a>
               <a href="tel:01258472623">
@@ -351,7 +398,7 @@ export default function CorporateEventsPage() {
               </a>
             </div>
             <p className="font-sans text-gray-400 text-sm">
-              reception@hintonworkspace.co.uk
+              marketing@hintonworkspace.co.uk
             </p>
           </div>
         </ScrollReveal>

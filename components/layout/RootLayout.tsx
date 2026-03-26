@@ -1,5 +1,6 @@
 import Header from './Header'
 import Footer from './Footer'
+import NewsletterBar from '@/components/ui/NewsletterBar'
 
 export default function RootLayout({
   children,
@@ -10,6 +11,7 @@ export default function RootLayout({
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">{children}</main>
+      <NewsletterBar />
       <Footer />
     </div>
   )
