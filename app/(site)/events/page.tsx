@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     title: 'Events & Workshops | Hinton Workspace',
     description:
       'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

@@ -16,12 +16,14 @@ export const metadata: Metadata = {
       'Join the Hinton Workspace community. Contact us today to learn more about our coworking spaces, book a tour or a trial day.',
     url: 'https://hintonworkspace.co.uk/contact',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Hinton Workspace | Get in Touch',
     description:
       'Join the Hinton Workspace community. Contact us today to learn more about our coworking spaces, book a tour or a trial day.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

@@ -17,12 +17,14 @@ export const metadata: Metadata = {
       'Explore Hinton Workspace pricing: Day Pass £20, The Occasional £49/month, The Regular £99/month, The Resident £249/month.',
     url: 'https://hintonworkspace.co.uk/pricing',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Pricing – Membership Options at Hinton Workspace',
     description:
       'Explore Hinton Workspace pricing: Day Pass £20, The Occasional £49/month, The Regular £99/month, The Resident £249/month.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

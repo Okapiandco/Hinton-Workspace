@@ -17,12 +17,14 @@ export const metadata: Metadata = {
       'Frequently asked questions about coworking, meeting rooms, pricing, and booking at Hinton Workspace.',
     url: 'https://hintonworkspace.co.uk/faqs',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FAQs | Hinton Workspace',
     description:
       'Frequently asked questions about coworking, meeting rooms, pricing, and booking at Hinton Workspace.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

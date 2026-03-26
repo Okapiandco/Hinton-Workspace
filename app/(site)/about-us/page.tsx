@@ -19,12 +19,14 @@ export const metadata: Metadata = {
       "Meet Alice & the team behind Hinton Workspace - rural, community-focused co-working blending heritage, support & collaboration.",
     url: 'https://hintonworkspace.co.uk/about-us',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Hinton Workspace | Dorset Coworking & Community',
     description:
       "Meet Alice & the team behind Hinton Workspace - rural, community-focused co-working blending heritage, support & collaboration.",
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

@@ -27,12 +27,14 @@ export const metadata: Metadata = {
       'Hinton Workspace is a beautifully designed co-working space in the heart of Hinton St Mary. Flexible desks, meeting rooms, and event spaces.',
     url: 'https://hintonworkspace.co.uk',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hinton Workspace | Flexible Coworking in North Dorset',
     description:
       'Flexible coworking space in North Dorset. Hot desks, meeting rooms, and event spaces in a calm, professional environment.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

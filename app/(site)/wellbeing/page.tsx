@@ -4,6 +4,8 @@ import FeatureCardsSection from '@/components/sections/FeatureCardsSection'
 import TextImageSection from '@/components/sections/TextImageSection'
 import Button from '@/components/ui/Button'
 import Image from 'next/image'
+import SchemaScript from '@/components/SchemaScript'
+import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Wellbeing | Hinton Workspace Dorset',
@@ -18,18 +20,25 @@ export const metadata: Metadata = {
       'Movement, nutrition, and mental wellness at Hinton Workspace. PT gym and spa services available.',
     url: 'https://hintonworkspace.co.uk/wellbeing',
     type: 'website',
+    images: [{ url: '/The%20Gym.jpg', width: 1200, height: 630, alt: 'Wellbeing at Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Wellbeing | Hinton Workspace Dorset',
     description:
       'Movement, nutrition, and mental wellness at Hinton Workspace. PT gym and spa services available.',
+    images: ['/The%20Gym.jpg'],
   },
 }
 
 export default function WellbeingPage() {
   return (
     <>
+      <SchemaScript schema={breadcrumbSchema([
+        { name: 'Home', url: 'https://hintonworkspace.co.uk' },
+        { name: 'Wellbeing', url: 'https://hintonworkspace.co.uk/wellbeing' },
+      ])} />
+
       {/* Hero */}
       <Section className="pt-32 pb-16">
         <div className="max-w-3xl mx-auto text-center">

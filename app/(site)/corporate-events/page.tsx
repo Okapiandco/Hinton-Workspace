@@ -6,6 +6,8 @@ import Button from '@/components/ui/Button'
 import TextImageSection from '@/components/sections/TextImageSection'
 import FeatureCardsSection from '@/components/sections/FeatureCardsSection'
 import HeroSection from '@/components/sections/HeroSection'
+import SchemaScript from '@/components/SchemaScript'
+import { breadcrumbSchema } from '@/lib/schema'
 
 export const metadata: Metadata = {
   title: 'Corporate Away Days & Retreats | Rivers Estate, Dorset',
@@ -20,12 +22,14 @@ export const metadata: Metadata = {
       'Corporate away days and retreats across 9,000 acres of rural Dorset. Modern workspaces, world-class dining, equestrian experiences, and countryside activities.',
     url: 'https://hintonworkspace.co.uk/corporate-events',
     type: 'website',
+    images: [{ url: '/images/Corporate%20Events/Ben%20Goode%20drone%20footage%20HSME%20010624.jpg', width: 1200, height: 630, alt: 'Rivers Estate Corporate Away Days' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Corporate Away Days & Retreats | Rivers Estate, Dorset',
     description:
       'Corporate away days and retreats across 9,000 acres of rural Dorset.',
+    images: ['/images/Corporate%20Events/Ben%20Goode%20drone%20footage%20HSME%20010624.jpg'],
   },
 }
 
@@ -91,6 +95,11 @@ const packages = [
 export default function CorporateEventsPage() {
   return (
     <>
+      <SchemaScript schema={breadcrumbSchema([
+        { name: 'Home', url: 'https://hintonworkspace.co.uk' },
+        { name: 'Corporate Events', url: 'https://hintonworkspace.co.uk/corporate-events' },
+      ])} />
+
       {/* Hero */}
       <HeroSection
         title={<>Corporate Away Days &amp; Retreats in <em>Rural Dorset</em></>}

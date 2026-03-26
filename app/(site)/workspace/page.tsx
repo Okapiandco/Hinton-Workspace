@@ -16,12 +16,14 @@ export const metadata: Metadata = {
       'Historic Victorian workshop turned inspiring rural co-working in Dorset. Desks, pods, meeting rooms, EV charging & dog-friendly. Book today.',
     url: 'https://hintonworkspace.co.uk/workspace',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hinton Workspace – Charming Rural Co-Working in Dorset',
     description:
       'Historic Victorian workshop turned inspiring rural co-working in Dorset. Desks, pods, meeting rooms, EV charging & dog-friendly.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 

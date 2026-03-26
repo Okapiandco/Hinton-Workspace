@@ -20,12 +20,14 @@ export const metadata: Metadata = {
       'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
     url: 'https://hintonworkspace.co.uk/whats-on',
     type: 'website',
+    images: [{ url: '/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg', width: 1200, height: 630, alt: 'Hinton Workspace' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "What's On | Hinton Workspace",
     description:
       'Upcoming events, workshops, and gatherings at Hinton Workspace in North Dorset.',
+    images: ['/Website Images 2026/About/The-Hinton-Workspace-Building copy.jpg'],
   },
 }
 
