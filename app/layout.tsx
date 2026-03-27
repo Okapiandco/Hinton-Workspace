@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { Libre_Baskerville, DM_Sans } from 'next/font/google'
+import Script from 'next/script'
+
+const GA_ID = 'G-7HR2N35K0B'
 
 const baskerville = Libre_Baskerville({
   subsets: ['latin'],
@@ -89,7 +92,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB" className={`${baskerville.variable} ${dmSans.variable}`}>
-      <head />
+      <head>
+        <Script
+          id="gtag-consent-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+              });
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `,
+          }}
+        />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="beforeInteractive"
+        />
+      </head>
       <body>
         {children}
       </body>

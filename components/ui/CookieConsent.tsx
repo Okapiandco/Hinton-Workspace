@@ -4,6 +4,17 @@ import { useState, useEffect } from 'react'
 
 type ConsentStatus = 'pending' | 'accepted' | 'rejected'
 
+declare global {
+  interface Window {
+    dataLayer: unknown[]
+  }
+}
+
+function gtag(...args: unknown[]) {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push(args)
+}
+
 function getConsent(): ConsentStatus {
   if (typeof window === 'undefined') return 'pending'
   const stored = localStorage.getItem('cookie-consent')
@@ -11,29 +22,13 @@ function getConsent(): ConsentStatus {
   return 'pending'
 }
 
-function enableAnalytics() {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID
-  if (!gaId || typeof window === 'undefined') return
-
-  // Load gtag script
-  const script = document.createElement('script')
-  script.async = true
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`
-  document.head.appendChild(script)
-
-  // Initialize gtag
-  window.dataLayer = window.dataLayer || []
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args)
-  }
-  gtag('js', new Date())
-  gtag('config', gaId)
-}
-
-declare global {
-  interface Window {
-    dataLayer: unknown[]
-  }
+function grantConsent() {
+  gtag('consent', 'update', {
+    analytics_storage: 'granted',
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+  })
 }
 
 export default function CookieConsent() {
@@ -46,14 +41,14 @@ export default function CookieConsent() {
     setMounted(true)
 
     if (consent === 'accepted') {
-      enableAnalytics()
+      grantConsent()
     }
   }, [])
 
   function accept() {
     localStorage.setItem('cookie-consent', 'accepted')
     setStatus('accepted')
-    enableAnalytics()
+    grantConsent()
   }
 
   function reject() {
