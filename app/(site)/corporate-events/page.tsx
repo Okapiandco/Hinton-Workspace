@@ -60,7 +60,7 @@ const venues = [
     description:
       'Set within one of the most stunning landscapes of Southern England, high on the chalk of the Cranborne Chase in Wiltshire, Rushmore Golf Club provides year-round golf on free-draining turf. A thoroughly modern 18-hole course set in beautiful, ancient parkland.',
     tagline: 'One of the best golf courses in the region.',
-    image: '/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.39.07%20(1).png',
+    image: '/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.39.07%20(1).jpg',
   },
 ]
 
@@ -189,10 +189,10 @@ export default function CorporateEventsPage() {
         <ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <Image src="/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.28.12.png" alt="Clay pigeon shooting on the estate" fill className="object-cover" />
+              <Image src="/images/Corporate%20Events/Screenshot%202025-12-02%20at%2012.28.12.jpg" alt="Clay pigeon shooting on the estate" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <Image src="/images/Corporate%20Events/Screenshot%202026-02-09%20at%2013.33.47.png" alt="Bird sculpture at Larmer Tree Gardens" fill className="object-cover" />
+              <Image src="/images/Corporate%20Events/Screenshot%202026-02-09%20at%2013.33.47.jpg" alt="Bird sculpture at Larmer Tree Gardens" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
               <Image src="/images/Corporate%20Events/Larmer%20Tree%20Queen%20LOW%20RES-08.jpg" alt="Event at Larmer Tree Gardens" fill className="object-cover" />
@@ -280,7 +280,7 @@ export default function CorporateEventsPage() {
         <ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative aspect-square rounded-lg overflow-hidden">
-              <Image src="/images/Corporate%20Events/Tulips%20in%20The%20Lodge%20(1).png" alt="The Lodge dining room with tulips" fill className="object-cover" />
+              <Image src="/images/Corporate%20Events/Tulips%20in%20The%20Lodge%20(1).jpg" alt="The Lodge dining room with tulips" fill className="object-cover" />
             </div>
             <div className="relative aspect-square rounded-lg overflow-hidden">
               <Image src="/images/Corporate%20Events/Dorset%20commercial%20photographer-65%20(1).jpg" alt="Cosy window seat in cottage accommodation" fill className="object-cover" />
