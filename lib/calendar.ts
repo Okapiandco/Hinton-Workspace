@@ -40,6 +40,7 @@ export function formatDate(dateString: string): string {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
+    timeZone: 'Europe/London',
   })
 }
 
@@ -48,5 +49,6 @@ export function formatTime(dateString: string): string {
   return date.toLocaleTimeString('en-GB', {
     hour: '2-digit',
     minute: '2-digit',
+    timeZone: 'Europe/London',
   })
 }
