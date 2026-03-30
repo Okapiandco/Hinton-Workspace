@@ -92,31 +92,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-GB" className={`${baskerville.variable} ${dmSans.variable}`}>
-      <head>
+      <body>
         <Script
-          id="gtag-consent-init"
-          strategy="beforeInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
-              gtag('consent', 'default', {
-                analytics_storage: 'granted',
-                ad_storage: 'granted',
-                ad_user_data: 'granted',
-                ad_personalization: 'granted',
-              });
               gtag('js', new Date());
               gtag('config', '${GA_ID}');
             `,
           }}
         />
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="beforeInteractive"
-        />
-      </head>
-      <body>
         {children}
       </body>
     </html>
